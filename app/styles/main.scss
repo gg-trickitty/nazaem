@@ -4,6 +4,13 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 $brand-primary:red;
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
 // endbower
+$border-radius-base: 6px;
+$border-radius-small: 6px;
+
+//text colors
+.green{color: #41ba6a;}
+.red{color: #ec5d39;}
+.blue{color: #5a75bd;}
 
 .browsehappy {
     margin: 0.2em 0;
@@ -15,8 +22,44 @@ $brand-primary:red;
 /* Space out content a bit */
 body {
     background-color: #eee;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
+a{
+    color: #ee6f50;
+    font-weight: bold;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+h1, h2, h3, h4, h5{font-family: Roboto; color: #444;}
+
+.form-control{
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 27px;
+}
+h4{
+    font-size: 20px;
+    font-weight: 700;
+}
+p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
+
+
+.navbar-default .navbar-toggle{
+    border: none;
+    color: #888;
+    font-size: 38px;
+    padding: 0px 0;
+    margin-top: -2px; 
+    margin-bottom: 0; 
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -25,26 +68,152 @@ body {
     padding-right: 15px;
 }
 
+.nz-btn{
+    font-weight: bold;
+    padding: 8px 80px;
+    margin: 0px 0 27px;
+    font-size: 14px;
+    background-color: #ea4b24;
+    border: none;
+    color: #fff;
+}
+
+.nz-dropdown {
+    width: 150px;
+    height: 38px;
+    overflow: hidden;
+    background: url(new_arrow.png) no-repeat right;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    position: relative;
+    select{
+        -webkit-appearance: none;
+        appearance: none;
+        border: 0;
+        border-radius: 0;
+        width: 150px;
+        color: #666;
+    }
+    .arrow{
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 6px 6px 0 6px;
+        border-color: #cdcdcd transparent transparent transparent;
+        position: absolute;
+        top: 17px;
+        right: 11px;
+        &:before{
+            content: "";
+            position: absolute;
+            border-right: 1px solid #eee;
+            width: 20px;
+            height: 25px;
+            top: -17px; right: 16px;
+        }
+    }
+    &.nz-dropdown-md{
+        width: 176px;
+        select{
+            width: 176px;
+            color: #b7b7b7;
+            font-style: italic;
+        }
+    }
+}
+
+.nz-slider{
+    width: 210px;
+    height: 4px;
+    background-color: #ededed;
+    margin-top: -3px;
+    margin-bottom: 15px;
+    padding-top: 2px;
+    .fill{
+        position: relative;
+        height: 1px;
+        background-color: #2fb35b;
+        width: 50%;
+        .handle{
+            position: absolute;
+            top: -6px;
+            right: 0;
+            background: url("../../images/nz-slider-handle.png") no-repeat center;
+            width: 15px;
+            height: 15px;
+            cursor: hand;
+            cursor: pointer;
+        }
+    }
+    &.orange{
+        .fill{
+            background-color: #ea4b24;
+            .handle{
+                background: url("../../images/nz-slider-handle-orange.png") no-repeat center;
+            }
+        }
+    }
+}
+
 .navbar.navbar-default{
     margin-bottom: 0;
     background: none;
     border: none;
+    .active{
+        border: none;
+    }
+    li{
+        padding-top: 11px;
+    }
+    li.active{
+        background-color: none;
+    }
+    li:last-child a{
+        border: none;
+    }
+    li a{
+        font-weight: normal; 
+        font-family: Roboto;
+        border-right: 1px solid #eee;  
+        padding: 0 15px;     
+    }
+    a:hover{
+        color: #ccc;
+    }
     .container{
-        padding: 0 35px;
+        padding: 10px 35px 15px;
         background-color: #fff;
     }
 }
 
+.navbar.navbar-default li a{
+    padding:  6px 18px 5px;
+    font-weight: 700;
+}
+
+.navbar.navbar-default li a.btn-success{
+    padding:  5px 18px 4px;
+    background-color: #2fb35b;
+}
+
+.navbar.navbar-default li a.btn-danger{
+    background-color: #ea4b24;
+}
+
 .nav-pills {
-    padding: 10px 0;
+    //padding: 10px 0;
+    //margin-top: -10px;
     li + li{
         margin-left: 7px;
     }
-    li{
+    ul li{
         margin-left: 10px;
     }
+    
     .btn{
-        padding:  5px 10px;
+         
+        font-size: 13px;
+        color: #ededed;
         &:hover{
             color: #666;
         }
@@ -54,37 +223,240 @@ body {
 /* Custom page header */
 .header {
     margin: 0;
+    background:  url('../../images/main-header.jpg') no-repeat center;
+    background-size: cover;
+    -moz-background-size: cover;  /* Firefox 3.6 */
+    background-position: center;  /* Internet Explorer 7/8 */
 
     /* Make the masthead heading the same height as the navigation */
     h3 {
         margin: 0;
-    }    
+    }  
+    .row{
+        margin-right: 0;
+        margin-left: 0;
+    }  
+    /* Main marketing message and sign up button */
+    .jumbo {    
+        color: #eee;
+        margin-top: 100px;
+        h1{font-size: 53px; font-weight: bold; text-transform: uppercase; color: #eee;}
+        p{
+            font-size: 16px;
+            color: #ededed;
+            &.subtext{
+                font-size: 14px;
+                padding-top: 37px;
+                margin-bottom: 40px;
+                opacity: 0.8;
+            }
+        }
+    }
 }
+
+.nz-calc-home, .nz-calc-home-mobile{
+        background-color: #fff;
+        margin-top: 7px;
+        padding-left: 0;
+        padding-right: 0;
+        h4{
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 0;
+        }  
+        .row{
+            padding: 15px;
+        }  
+
+        .nz-btn{
+            font-size: 20px;
+            padding: 11px 74px;
+        }
+
+        .calc-top{
+            font-family: Roboto;
+            .top-data{
+                position: relative;
+            }
+            span{
+                color: #2fb35b;
+                font-size: 66px;
+                font-weight: bold;
+
+                small{
+                    font-size: 20px;
+                    font-weight: normal;
+                    margin-left: 3px;
+                }
+                &.calc-top-period{
+                    color: #ea4b24;
+                }
+            }
+            .range{
+                position: absolute;
+                top: 10px;
+                right: 35px;
+                font-family: Verdana, Geneva, sans-serif;
+                font-size: 20px;
+                div{
+                    border: 1px solid #eee;
+                    cursor: hand;
+                    cursor: pointer;
+                    padding: 2px 10px 7px; 
+                    background: url("../../images/down.png") no-repeat center;  
+                    &.more{background: url("../../images/up.png") no-repeat center;} 
+                    width: 38px;
+                    height: 38px;                
+                }
+                div:hover{
+                    background: url("../../images/down-hover.png") no-repeat center;
+                }
+                div.more:hover{
+                    background: url("../../images/up-hover.png") no-repeat center;
+                }
+
+            }
+        }
+
+        .calc-promo{
+            color: #888;
+            border-top: 1px solid #e7e7e7;
+            label{
+                font-size: 14px; 
+                font-weight: normal;
+                margin-bottom: 0;
+            }
+            small{display: block;font-weight: normal;}
+            .input-group{
+                padding-top: 3px;
+                input{
+                    padding: 17px;
+                    padding-top: 18px;
+                    border-radius: 5px;
+                    border-right: none;
+                    //margin-right: -1px;
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                    z-index: 0;
+                }
+                button{
+                    background-color: #ea4b24;
+                    color: #fff;
+                    font-weight: bold;
+                    border: none;
+                    padding: 9px 18px;
+                    border-radius: 5px;
+                    margin-left: -2px;
+                }
+            }
+        }
+
+        .calc-math{
+            color: #888;
+            border-top: 1px solid #e7e7e7;
+            font-family: Roboto;
+            span{
+                color: #2fb35b;
+                font-size: 32px;
+                display: block;
+                font-weight: bold;
+                small{font-weight: normal; font-size: 22px; margin-left: 3px;}
+            }
+            .calc-sum span{
+                color: #ea4b24;
+            }
+        } 
+    }  
+
+.nz-calc-home-mobile{display: none;}
 
 .container{
     padding: 0;
+    background-color: #fff;
+
+    .row{
+        padding: 20px 35px;
+    }
+
+    .info{
+        h4{
+            font-size: 20px;
+            color: #444;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        p{
+            margin-bottom: 6px;
+        }
+        .nz-data{
+            border-left: 1px solid #eee;
+            padding-left: 20px;
+            h5{
+                font-weight: bold;
+                color: #555;
+                margin-bottom: 3px;
+            }
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                padding-right: 35px;
+
+                li{   
+                    color: #535353;                 
+                    span{
+                        float: right;
+                        color: #2fb35b;
+                    }
+                    &:first-child, &:first-child span{
+                        color: #777;
+                        padding-bottom: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .bottom{
+        color:#444;
+        font-family: Roboto;
+        h5{            
+            font-weight: bold;
+        }
+        span{
+            display: block;
+            font-size: 30px;
+        }
+    }
 }
 
 /* Custom page footer */
 .footer {
     padding-top: 19px;
+    padding-bottom: 65px;
     color: #777;
-    border-top: 1px solid #e5e5e5;
+    //border-top: 1px solid #e5e5e5;
+    background-color: #eee;
+    center{
+        background-color: #eee;
+        img{padding: 20px;}
+        p{
+            padding-bottom: 25px;
+            a{
+                color: #999;
+                font-weight: normal;
+                &:hover{
+                    color: #555;
+                }
+            }
+        }
+    }
 }
 
 .container-narrow > hr {
     margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-    }
-}
+
 
 /* Supporting marketing content */
 .marketing {
@@ -94,6 +466,11 @@ body {
     div{
         padding: 15px;
     }
+    img{
+        margin-right: 15px;
+        display: inline;
+        float: left;
+    }
     
 }
 
@@ -101,10 +478,376 @@ body {
     margin-right: auto;
 }
 
+
+
+//==login
+.login{
+    padding: 30px;
+    margin-top: 115px;
+    margin-bottom: 100px;
+    h2{
+        color: #444;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    input{
+        background-color: #f6f6f6;
+        padding: 17px 12px 19px;
+    }
+    input[type=password]{
+        margin-bottom: 20px;}
+    .nz-btn{
+        font-size: 12px;
+        padding: 8px 60px;
+        margin-bottom: 15px;
+    }
+    .form-group{
+        margin-bottom: 12px;
+    }
+    a{font-size: 13px; font-weight: normal; margin-bottom: 48px; color: #ea4b24}
+
+    ::-webkit-input-placeholder { color:#777; font-style: italic; font-size: 14px;}
+    ::-moz-placeholder { color:#777; } /* firefox 19+ */
+    :-ms-input-placeholder { color:#777; } /* ie */
+    input:-moz-placeholder { color:#777; }
+}
+
+//==form-login
+.form-login{
+    
+    ul{
+        list-style: none;
+        padding-left: 0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 41px;
+        li{
+            //display: inline-block; 
+            float: left;                     
+            text-transform: uppercase;
+            //position: relative; 
+               
+
+            a{                
+                color: #777;
+                font-weight: normal;
+                display: block;
+                padding: 13px 13px 11px;
+                border: 1px solid #dfdfdf;
+                font-size: 12px;
+                margin-right: 9px;
+                border-bottom: none;                
+                &:hover{
+                    text-decoration: none;
+                    color: #4c4c4c;
+                    padding-bottom: 14px;
+                    margin-top: -3px;               
+                    color: #4c4c4c;
+                }
+                &.active{                
+                    padding-bottom: 12px;
+                    margin-top: -3px;               
+                    color: #4c4c4c;
+                    clear: both;
+                    border-bottom: none; 
+                    font-size: 14px; 
+                    border-color: #ccc;
+                    background-color: #fff;
+                }
+            }
+
+        }
+    }
+    form{
+        input{            
+            padding: 17px 12px 19px;
+            margin-right: 11px;
+        }
+        .nz-btn{
+            margin-bottom: 0;
+            padding: 10px 58px 9px;
+            margin-left: 4px;
+        }
+        a{
+            margin-top: 20px;
+            font-weight: normal;
+            display: block;
+        }
+    }
+}
+
+//==form
+.container.form-login{
+    padding-bottom: 30px;
+    .row{
+        position: relative;
+    }
+}
+
+.nz-data{
+    
+    .tab-vert-title{
+        background-color: #f4f4f4;
+        border-radius: 6px;
+        margin-bottom: 11px;
+        padding: 0;
+        .tab-vert-num{
+            display: inline-block;
+            background-color: #aaa;
+            font-family: Roboto;
+            font-size: 20px;
+            color: #fff;
+            padding: 5px 14px 7px;
+            border-radius: 6px;
+        }
+        h3{
+            display: inline-block;                
+            font-size: 18px;                
+            //padding: 11px 15px 14px 10px;
+            margin: 0px; 
+            margin-left: 10px;
+            font-weight: 700;
+        }
+    }    
+
+    &.active{
+        .tab-vert-title{
+            margin-bottom: 40px;
+
+            .tab-vert-num{
+                background-color: #2fb35b;
+            }
+        }
+    }
+
+    form{
+        margin-bottom: 35px;
+    }
+
+    .nz-data-title{
+        border-top: 1px solid #eee;
+        h3{
+            font-size: 16px;
+            font-weight: 700;
+            background-color: #fff;
+            //margin-top: -11px;
+            float: left;
+            padding-right: 15px;
+            padding-bottom: 1px;
+            margin: -11px 0 10px;
+        }
+    }
+
+    .row, div{
+        margin: 0; padding: 1px 0;
+    }
+
+    .row{
+        margin: 33px 0 46px;
+    }
+
+    .row.nz-sub div{
+        margin-left: 12px;
+        margin-top: -7px;             
+        width: 31%;   
+    }
+
+    .row.nz-sub div:last-child{
+        margin-left: 21px;
+    }    
+
+    label{display: block; font-size: 14px; font-weight: normal; margin-bottom: 11px;}
+
+    .form-inline .form-control{}
+
+    input.form-control{
+        width: 228px;
+        margin-right: 15px;
+         &.last-col{
+            margin-right: 0;
+        }
+    }
+
+    .nz-address{
+        .first-col{
+            margin-right: 6px;
+        }
+        .form-control{
+            margin-right: 13px;
+        }
+        .last-col-lg{
+            width: 229px;
+            margin-left: 6px;
+            .multi-label{
+                margin-bottom: 11px;
+            }
+        }
+        input{
+            &.input-md{            
+                width: 160px;
+                margin-right: 3px;
+            }
+
+            &.input-xmd{
+                width: 61px;
+            }
+
+            &.input-sm{
+                width: 50px;
+                margin-right: 5px;
+            }   
+            &.last-col{
+                margin-right: 0;
+                width: 51px;
+            } 
+        }
+        &.nz-address-period{
+            .form-group{
+                //margin-right: 12px;
+            }
+        }
+    }   
+    .nz-address-id{
+        h4{
+            font-size: 16px;
+        }
+        .form-group{
+            margin-right: 16px;
+            width: 230px;
+            &.last-col{
+                margin-right: 0;
+            }
+        }
+        .nz-dropdown{
+            width: 230px;
+            select{
+                width: 230px;
+                color: #b7b7b7;
+                font-style: italic;
+            }
+        }
+    } 
+    .napred{
+        float: right;
+        span{
+            color: #545454;
+            opacity: 0.8;
+            font-size: 13px;
+            margin-right: 12px;
+        }
+    }
+}
+
+.nz-sidebar{
+    font-family: Roboto;
+    border-left: 1px solid #eee;
+    padding-left: 0;
+    .nz-sidebar-param{
+        padding: 30px;
+        padding-top: 0;
+        .row{
+            margin-left: -15px; 
+            .nz-slider{
+                width: 112px;
+                margin-top: 10px;
+                margin-bottom: 21px; 
+            }
+        }
+    }
+
+    
+    h4{
+        margin-bottom: 27px;
+        margin-top: 0;
+        font-size: 21px;
+    }
+    h5, h6{
+        margin-bottom: 0;
+        color: #777;
+        //font-family: Helvetica, Arial, sans-serif;
+    }
+    h5{      
+        font-size: 14px;  
+        padding-bottom: 6px;
+    }
+    h6{
+        font-size: 13px;
+        margin-bottom: 3px;
+        line-height: 18px;
+    }
+    h3{
+        font-size: 19px;
+        font-weight: 700;
+        color: #666;
+        margin-top: 2px;
+    }
+    .row{
+        margin: 0; padding: 0;
+        div{
+            width: 40%;
+        }
+    }
+    span{
+        display: block;
+        font-size: 23px;
+        font-weight: 700;
+        color: #666;
+        small{
+            font-weight: normal;
+            margin-left: 3px;
+        }
+        &.nz-sum{color: #2FB35B; padding-bottom: 7px;}
+        &.nz-period{color: #EA4B24; padding-bottom: 7px;}
+    }
+    .nz-sidebar-final{
+        border-top: 1px solid #eee;
+        padding: 30px;
+        padding-top: 20px;
+        button{
+            font-size: 13px;
+            color: #EA4B24;
+            padding: 3px 20px 5px;
+        }
+        h5{
+            padding-bottom: 1px;
+        }
+        .nz-sum{
+            font-size: 39px;
+            padding-bottom: 7px;
+        }
+    }
+}
+
+.nz-sidebar-contact{
+    h5{
+        font-weight: 700;
+        font-size: 20px;
+    }
+    span{
+        font-size: 30px;
+        font-family: Roboto;
+    }
+    a{
+        display: block;
+    }
+    border-left: 1px solid #eee;
+    padding-left: 30px;
+    position: absolute;
+    bottom: 30px;
+    right: 180px;
+}
+
+.about-us .nz-sidebar{
+    padding: 0 30px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px){
     .container {
         max-width: 1170px;
+        &.login{
+            max-width: 348px;
+        }
     }
 
     /* Remove the padding we set earlier */
@@ -123,5 +866,181 @@ body {
     /* Remove the bottom border on the jumbotron for visual effect */
     .jumbotron {
         border-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .nz-calc-home{display: none;}
+    .nz-calc-home-mobile{display: block;}
+}
+
+@media screen and (max-width: 320px){
+    .container .info .nz-data ul li:first-child, .container .info .nz-data ul li:first-child span{
+        padding: 0;
+    }
+
+    .container {
+        max-width: 320px;
+        overflow: hidden;
+        .row{
+            padding: 20px;
+        }
+    } 
+
+    .navbar.navbar-default{
+        .container{
+            padding: 15px 5px;
+        }
+    } 
+
+    .header .row {
+        width: 100%;
+        padding: 0;
+        .jumbo-text{
+            padding: 0;
+            margin-top: 20px;
+        }
+        .jumbo{
+            text-align: center;
+            margin-top: 38px;
+            h1{
+                font-size: 27px;
+            }
+            .lead{
+                display: none;
+            }
+            .subtext{
+                padding: 0 16px;
+                font-size: 13px;
+                margin-bottom: 35px;
+                opacity: 0.8;
+                margin-top: 16px;
+                line-height: 21px;
+                br{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .container {
+        .row.marketing{
+            padding: 0;
+
+            div{
+                padding:0 15px;
+                padding-top: 30px;
+                p{margin: 0;}
+            }
+
+            .nz-icon{
+                min-width: 78px;
+                float: left;
+                height: 83px;
+                margin-left: -10px;
+
+                img{
+                    float: none;
+                    margin-right: 2px; 
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+
+        .info{
+            h4, h5{
+                text-align: center;
+                font-weight: 700;
+                
+            }
+
+            h5{
+               font-size: 18px; 
+            }
+
+            span{
+                font-weight: 700;
+            }
+
+            .nz-data{
+                background-color: #f4f4f4;
+                padding: 10px 0 20px;
+                margin: 5px 13px 0;
+                border: none;
+                span{
+                    font-weight: normal;
+                }
+                &:last-child span{
+                    font-weight: 700;
+                }
+                ul {
+                    padding-right: 0;
+                    li{
+                        padding: 0 45px;
+                        font-size: 18px;
+                        line-height: 29px;
+                        &:first-child{
+                            padding: 2px 47px 2px!important;
+                            font-size: 15px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .nz-calc-home-mobile {
+        .top-data{
+            h4{
+                font-size: 14px;
+            }
+            span{
+                font-size: 50px;
+            }
+
+            .range{
+                div{
+                    padding: 27px 19px 13px;
+                }
+            }
+
+            .nz-slider{
+                    width: 163px;
+            }
+        }
+
+        .calc-promo label{
+            float: left;
+            line-height: 44px;
+            margin-right: 20px;
+        }  
+
+        .calc-math{
+            .base{
+                float: left;
+                width: 50%;
+                padding-left: 15px;
+            }
+            .calc-sum{
+                padding-left: 15px;
+                clear: both;
+                padding-top: 20px;
+            }
+        }      
+    }
+
+    .footer center img {
+        padding: 15px 1px;
+    }
+
+    .footer center p{
+        font-size: 13px;
+    }
+
+    .footer {
+        padding-bottom: 0;
     }
 }
