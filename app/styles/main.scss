@@ -362,8 +362,11 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
                 font-weight: bold;
                 small{font-weight: normal; font-size: 22px; margin-left: 3px;}
             }
-            .calc-sum span{
-                color: #ea4b24;
+            .calc-sum {
+                padding-right: 0;
+                span{
+                    color: #ea4b24;
+                }
             }
         } 
     }  
@@ -426,6 +429,100 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             display: block;
             font-size: 30px;
         }
+    }
+}
+
+
+//==FAQ
+.faq{
+    h2{
+        padding-left: 12px;
+    }
+    h3{
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    ul{
+        list-style: none;
+        padding-left: 0;
+    }
+    table{
+        color: #4d4d4d;
+        margin-bottom: 45px;
+        thead{
+            th{
+                padding-top: 15px;
+                padding-bottom: 10px;
+            }            
+        }
+        tr{
+            line-height: 30px;
+            td{
+                padding-right: 30px;
+            }
+        }
+    }
+    .bottom{
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+    }
+}
+
+.form-inline .form-control, .navbar-form .form-control{
+    width: 238px;
+}
+
+.nz-contact{
+    border-left: 1px solid #eee;
+    padding: 0 30px;
+    h4{
+        margin-top: 0;
+    }
+    p{
+        font-size: 13px;
+        margin-bottom: 17px;
+    }
+    form{
+        width: 240px;
+        input{
+            background-color: #f6f6f6;            
+            margin: 5px 0;
+            &#human{
+                width: 113px;
+                margin-left: 0;
+            }            
+        }
+        ::-webkit-input-placeholder { color:#909090; font-style: italic;}
+        ::-moz-placeholder { color:#909090; font-style: italic;} /* firefox 19+ */
+        :-ms-input-placeholder { color:#909090; font-style: italic;} /* ie */
+        input:-moz-placeholder { color:#909090; font-style: italic;}
+        textarea{
+            //font-style: italic;
+            margin-bottom: 15px;
+            margin-top: 5px;
+            padding-bottom: 1px;
+            background-color: #f6f6f6;
+            height: 140px;
+        }
+        img{
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .human{
+            display: inline-block;
+            width: 113px;         
+            label{
+                font-size: 13px;
+                font-weight: normal;
+            }
+        }
+    }
+    #send-msg.nz-btn{
+        float: right;
+        margin-top: 15px;
+        padding: 10px 32px 9px;
+        margin-right: 2px;
     }
 }
 
