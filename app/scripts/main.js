@@ -11,6 +11,17 @@ angular.module('nazaem')
 .controller('MainCtrl', ['$scope', function ($scope) {
 	
 }])
+.controller('Apply', ['$scope', '$http', function ($scope,$http) {
+	if(localStorage.amount){
+		$scope.amount = localStorage.amount;
+		$scope.interest = localStorage.interest;
+		$scope.days = localStorage.days;
+		$scope.total = Number(localStorage.amount)+Number(localStorage.interest)+4;
+		console.log($scope.total);
+		$scope.returnDate = new Date();
+		$scope.returnDate.setTime($scope.returnDate.getTime()+$scope.days*86400000);
+	}
+}])
 
 
 //directives
@@ -76,6 +87,11 @@ angular.module('nazaem')
 
 			$scope.apply = function(){
 				$scope.applying=true;
+				//save data to localStorage
+				localStorage.amount = $scope.amount;
+				localStorage.days = $scope.days;
+				localStorage.interest = $scope.interest;
+				window.location.href="/form.html";
 			}
 
 		}
@@ -107,6 +123,16 @@ directive('navheader', [function () {
 			
 		}
 	};
+}])
+
+.
+filter('date',[function(){
+	return function(d){
+		d= new Date(d);
+		var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+		var month = ['януари','февруари','март','април','май', 'юни', 'юли','август','септември','октомври','ноември','декември'];
+		return d.getDate()+" "+month[d.getMonth()]+' '+d.getFullYear();
+	}
 }])
 
 //jQuery UI tab menu functionality
