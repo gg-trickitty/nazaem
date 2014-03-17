@@ -9,22 +9,27 @@ This is a repo for the new website of nazaem.bg
 
 In order to run this you need Node & Ruby installed on your machine.
 You also need the following Node Packages:
+
     npm install -g grunt
     npm install -g bower
 
 Once you clone the repo, please run:
+
 	npm install
 	bower install
 
 This will install all project dependecies like angular & jquery.
 To run the project:
+
 	grunt serve
 
 
 To build the project for distribution, please:
+
 	grunt build
 
 To view the distribution:
+
 	grunt serve:build
 
 
