@@ -21,9 +21,8 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
-
-    <body ng-app="nazaem" ng-controller="MainCtrl" ng-class="{'pullleft':menuOpen}">
-    <div id="fb-root"></div>
+    <body class="xcredit" ng-app="nazaem" ng-controller="MainCtrl" ng-class="{'pullleft':menuOpen}">
+        <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -34,19 +33,20 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="navbar navbar-default navbar-static-top">
+
+
+        <div class="navbar navbar-default navbar-static-top nz-xcredit">
             <div class="container">
-                <a href="#" class="navbar-brand"><img src="/images/nazaem-logo.png" alt="Nazaem.bg" /></a>
+                <a href="#" class="navbar-brand"><img src="/images/logo-xcredit.png" alt="Nazaem.bg" /></a>
                 
-                <button class="navbar-toggle" hm-tap="menuOpen=!menuOpen" data-toggle="collapse" data-target=".navHeaderCollapse">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                     ☰
                     <!-- <span class="icon-bar" style="color: #000;"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> -->
                 </button>
 
-                <div height100 class="navbar-collapse" hm-swiperight="menuOpen=false;">
-                    
+                <div class="collapse navbar-collapse navHeaderCollapse">                    
                     <ul class="nav nav-pills navbar-right">
                         <li><a href="login.html" class="btn-success btn">ВХОД</a></li>
                         <li><a href="#" class="btn-danger btn">ВЗЕМИ НАЗАЕМ</a></li>                        
@@ -62,51 +62,49 @@
                         <!-- <li><a href="#" class="btn-success btn">ВХОД</a></li>
                         <li><a href="#" class="btn-danger btn">НАЗАЕМ</a></li> -->
                     </ul>
-                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
-
-        <div class="container" >
-           <div class="header">
+        <div class="container x-header" >
+            <div class="header">
                <!-- <div class="panel panel-default"> -->
                <!--  <img src="images/main-header.jpg" width="100%" /> -->
                 <div class="row">
                     <div class="col-lg-6 jumbo-text">
-                        <div class="jumbo">
-                            <h1>Бързи и изгодни кредити онлайн!</h1>
-                            <p class="lead">Получете бързи и изгодни кредити онлайн без да нарушавате финансовия си баланс за следващите месеци.</p>
+                        <div class="jumbo xcredit">
+                            <h1>Вземете кредит за<br /> следващото си приключение!</h1>
+                            
 
-                            <p class="subtext">Можем да ви дадем  на заем до <strong>399лв</strong> и да ви преведем<br /> парите по Вашата сметка до <strong>13:23 часа</strong> днес.</p>
+                            <p class="subtext">Иван взе кредит, отиде на сноуборд в Алпите, и не трябваше да го връща.. <a href="#">научи повече &#187;</a></p>
                         </div>
                     </div>
-                    <div class="col-sm-6 nz-calc-home" calculator>
-                        <form ng-submit="apply()">
+                    <div class="col-sm-6 nz-calc-home">
+                        <form>
                             <div class="row calc-top">
                                 <div class="col-lg-6 top-data">
                                     <h4>ИСКАНА СУМА</h4>
-                                    <span class="calc-top-amount"><span ng-bind="amount"></span><small>лв</small></span>
+                                    <span>310<small>лв</small></span>
                                     <div class="nz-slider">
-                                        <div class="fill" ng-style="fillAmount()">
-                                            <div class="handle" hm-drag="drag($event,'amount')" hm-dragstart="dragstart($event,'amount')" hm-dragend="dragend($event)"></div>
+                                        <div class="fill">
+                                            <div class="handle"></div>
                                         </div>
                                     </div>
                                     <div class="range">
-                                        <div class="more" hm-tap="add.amount(10)"><!-- <img src="images/up.png" /> --></div>
-                                        <div hm-tap="add.amount(-10)"><!-- <img src="images/down.png" /> --></div>
+                                        <div class="more"><!-- <img src="images/up.png" /> --></div>
+                                        <div><!-- <img src="images/down.png" /> --></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 top-data">
                                     <h4>СРОК</h4>
-                                    <span class="calc-top-period"><span ng-bind="days"></span><small>дни</small></span>
+                                    <span class="calc-top-period">25<small>дни</small></span>
                                     <div class="nz-slider orange">
-                                        <div class="fill" ng-style="fillDays()">
-                                            <div class="handle" hm-drag="drag($event,'days')" hm-dragstart="dragstart($event,'days')" hm-dragend="dragend($event)"></div>
+                                        <div class="fill">
+                                            <div class="handle"></div>
                                         </div>
                                     </div>
                                     <div class="range">
-                                        <div class="more" hm-tap="add.days(2)"><!-- <img src="images/up.png" /> --></div>
-                                        <div hm-tap="add.days(-2)"><!-- <img src="images/down.png" /> --></div>
+                                        <div class="more"><!-- <img src="images/up.png" /> --></div>
+                                        <div><!-- <img src="images/down.png" /> --></div>
                                     </div>
                                 </div>
                             </div>
@@ -127,51 +125,56 @@
                             <div class="row calc-math">
                                 <div class="col-sm-4">
                                     РАЗМЕР НА ЗАЕМА
-                                    <span><span ng-bind="amount"></span><small>лв</small></span>
+                                    <span>310<small>лв</small></span>
                                 </div>
                                 <div class="col-sm-4">
                                     ТАКСА
-                                    <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
+                                    <span>61.04<small>лв</small></span>
                                 </div>
                                 <div class="col-sm-4 calc-sum">
                                     СУМА ЗА ВРЪЩАНЕ
-                                    <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
+                                    <span>371.04<small>лв</small></span>
                                 </div>
                             </div>
-                           <center> <button type="submit" ng-disabled="applying" class="btn btn-danger nz-btn">ВЗЕМИ ЗАЕМ</button></center>
+                           <center> <a href="#" class="btn btn-danger nz-btn">ВЗЕМИ ЗАЕМ</a></center>
                         </form>
                     </div>
                 </div>
                <!-- </div> -->
             </div><!-- header -->
+        </div>
 
-            <div class="col-sm-6 nz-calc-home-mobile" calculator>
+
+        <div class="container" >
+           
+
+            <div class="col-sm-6 nz-calc-home-mobile">
                 <form>
                     <div class="row calc-top">
                         <div class="col-lg-6 top-data">
                             <h4>ИСКАНА СУМА</h4>
-                            <span><span ng-bind="amount"></span><small>лв</small></span>
+                            <span>310<small>лв</small></span>
                             <div class="nz-slider">
-                                <div class="fill" ng-style="fillAmount()">
-                                    <div class="handle" for="amount" hm-drag="drag($event,'amount')" hm-dragstart="dragstart($event,'amount')" hm-dragend="dragend($event,'amount')"></div>
+                                <div class="fill">
+                                    <div class="handle"></div>
                                 </div>
                             </div>
                             <div class="range">
-                                <div class="more" hm-tap="add.amount(10)"><!-- <img src="images/up.png" /> --></div>
-                                <div hm-tap="add.amount(-10)"><!-- <img src="images/down.png" /> --></div>
+                                <div class="more"><!-- <img src="images/up.png" /> --></div>
+                                <div><!-- <img src="images/down.png" /> --></div>
                             </div>
                         </div>
                         <div class="col-lg-6 top-data">
                             <h4>СРОК</h4>
-                            <span class="calc-top-period"><span ng-bind="days"></span><small>дни</small></span>
+                            <span class="calc-top-period">25<small>дни</small></span>
                             <div class="nz-slider orange">
-                                <div class="fill" ng-style="fillDays()">
-                                    <div class="handle" for="days" hm-drag="drag($event,'days')" hm-dragstart="dragstart($event,'days')" hm-dragend="dragend($event,'days')"></div>
+                                <div class="fill">
+                                    <div class="handle"></div>
                                 </div>
                             </div>
                             <div class="range">
-                                <div class="more" hm-tap="add.days(2)"><!-- <img src="images/up.png" /> --></div>
-                                <div hm-tap="add.days(-2)"><!-- <img src="images/down.png" /> --></div>
+                                <div class="more"><!-- <img src="images/up.png" /> --></div>
+                                <div><!-- <img src="images/down.png" /> --></div>
                             </div>
                         </div>
                     </div>
@@ -192,15 +195,15 @@
                     <div class="row calc-math">
                         <div class="base">
                             РАЗМЕР НА ЗАЕМА
-                            <span><span ng-bind="amount"></span><small>лв</small></span>
+                            <span>310<small>лв</small></span>
                         </div>
                         <div class="base">
                             ТАКСА
-                            <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
+                            <span>61.04<small>лв</small></span>
                         </div>
                         <div class="calc-sum">
                             СУМА ЗА ВРЪЩАНЕ
-                            <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
+                            <span>371.04<small>лв</small></span>
                         </div>
                         
                     </div>
@@ -289,19 +292,20 @@
                 </div>
 
                 <div class="col-lg-4">                    
-                    <h5>Спечели пари</h5>
-                    <p> Печелете пари, като помагате на свои приятели  и ги информирате за нашите бързи кредити. <a href="#">прочети още &#187;</a></p>
+                    <h5>От нашите победители</h5>
+                    <img src="images/winner.png" /><p> Миналата седмица Иван взе кредит от нас и отиде да кара сноуборд в Алпите. <a href="#">прочети още &#187;</a></p>
 
                 </div>
             </div> 
 
-            <div class="footer clearfix">
-                <center>                                  
-                    <img src="images/noi.png" />
+            <div class="footer clearfix xcredit">
+                <center>
                                   
-                    <img src="images/bnb.png" />  
+                        <img src="images/noi-xcredit.png" />
+                                      
+                        <img src="images/bnb-xcredit.png" />  
 
-                    <img src="images/kzld.png" />
+                        <img src="images/kzld-xcredit.png" />
                 </center>
                 <center><p><a href="#">Бърз кредит</a> • <a href="#">Бързи заеми</a> • <a href="#">Бързи кредити</a> • <a href="#">Заеми</a> • <a href="#">Кредити онлайн</a> <br /> <a href="#">Пари назаем</a> • <a href="#">Кредит лична карта</a> • <a href="#">Кредити без Доказване на Доходи</a> • <a href="#">Потребителски Кредит</a></p></center>
                 <center><p class="text-muted credit">&copy; xCredit.bg е услуга на Pan Balkan Finance AD • Най-лесните и бързи кредити онлайн • Всички права са запазени • Удостоверение № BGR00263<br />

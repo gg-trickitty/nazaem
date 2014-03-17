@@ -22,6 +22,14 @@
         <!-- endbuild -->
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -183,6 +191,9 @@
                         <h5>За контакти</h5>
                         <span>02/ 489 5555</span>
                         <a href="#">contacts@nazaem.bg</a>
+
+                        <br /><br />
+                        <div class="fb-like" data-href="https://www.facebook.com/nazaem.bg" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
                     </div>
 
                     <div class="col-lg-4">                    

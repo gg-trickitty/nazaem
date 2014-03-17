@@ -46,6 +46,10 @@ a{
     }
 }
 
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    background: none;
+}
+
 h1, h2, h3, h4, h5{font-family: Roboto; color: #444;}
 
 .form-control{
@@ -72,6 +76,10 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
     padding: 0px 0;
     margin-top: -2px; 
     margin-bottom: 0; 
+}
+
+.navbar-default .navbar-collapse{
+
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -192,6 +200,9 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
     }
     li{
         padding-top: 11px;
+        &:hover{
+            background: none;
+        }
     }
     li.active{
         background-color: none;
@@ -205,15 +216,17 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
         border-right: 1px solid #eee;  
         padding: 0 15px;     
     }
-    a:hover{
+    li a:hover{
         color: #ccc;
+        background: none;
     }
     .container{
         padding: 10px 35px 15px;
         background-color: #fff;
     }
     .navbar-toggle{
-        margin-right: -15px;
+        //margin-right: 5px;
+
         @include transform(translateY(3px))
     }
     @media screen and (max-width:768px){
@@ -227,12 +240,22 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 }
 
 .navbar.navbar-default li a.btn-success{
-    padding:  5px 18px 4px;
+    //padding:  5px 18px 4px;
     background-color: #2fb35b;
+    border: none;
 }
 
 .navbar.navbar-default li a.btn-danger{
     background-color: #ea4b24;
+}
+
+.navbar.navbar-default .navbar-nav{
+    margin-top: 5px;
+}
+
+.navbar.navbar-default .navbar-nav li a{        
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .navbar-collapse{
@@ -249,6 +272,32 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
         z-index: 99999;
         background:#333;
         overflow: hidden;
+
+        .nav-pills {
+            background-color: #514f51;
+            margin-left: 0;
+            padding: 14px 30px 18px;
+            a.btn{
+                font-size: 16px;
+                font-weight: bold!important;
+                padding: 9px 22px 8px;
+                &.btn-success{
+                    position: absolute;
+                    bottom: -410px;
+                    left: 4px;
+                }
+            }
+        }
+
+        .navbar-nav{
+            padding: 5px 30px 25px;
+            border-bottom: 1px solid #222;            
+        }
+        li a{
+            font-size: 18px;
+            font-weight: normal!important;
+            color: #fff!important;
+        }
         @include transform( translate(100%) );
         &.in{
             // @include transform( translate(70px));
@@ -265,6 +314,10 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 .nav-pills {
     //padding: 10px 0;
     //margin-top: -10px;
+    li a{
+        border-radius: 6px;
+    }
+    margin-left: 30px;
     li + li{
         margin-left: 7px;
     }
@@ -272,10 +325,10 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
         margin-left: 10px;
     }
     
-    .btn{
-         
+    .btn{         
         font-size: 13px;
         color: #ededed;
+
         &:hover{
             color: #666;
         }
@@ -498,8 +551,16 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             display: block;
             font-size: 30px;
         }
+        img{
+            float: left;
+            margin-right: 10px;
+        }
     }
 }
+
+
+
+
 
 
 //==FAQ
@@ -681,7 +742,9 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 
 //==form-login
 .form-login{
-    
+    h2{
+        padding-left: 30px;
+    }
     ul{
         list-style: none;
         padding-left: 0;
@@ -1006,6 +1069,90 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 .about-us .nz-sidebar{
     padding: 0 30px;
 }
+
+
+
+//==xcredit
+
+body.xcredit{
+    background-color: #222;
+    background: url("../../images/xcredit-bg.png") no-repeat top center #222;
+
+    .navbar-brand{
+        margin-bottom: 12px;
+    }
+
+    .container.x-header{
+        background: transparent;
+    }
+
+    .header{
+        //background-image: none;
+        background: transparent;
+    }
+    .navbar-toggle{
+        margin-top: 5px;
+    }
+}
+
+.nz-xcredit.navbar .container{
+    background-color: #222;
+    ul{
+        padding-top: 10px;
+    }
+
+    li a{
+        color: #aaa;
+        border-right-color: #444;
+    }
+    li.active a{
+        color: #888;
+    }
+    li a:hover{
+        color: #ccc;
+    }
+
+    .navbar.navbar-default .navbar-nav li a{        
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .btn-success{
+        background-color: #d96d00;
+        color: #ededed;
+        border: none;    
+    }
+    .btn-danger{
+        background-color: #d12d15;
+        color: #ededed;
+    }
+}
+.jumbo.xcredit{
+    background:rgba(34,34,34,0.7);
+    padding: 30px;
+    margin-top: 226px;
+    h1{
+        font-size: 26px;
+        text-transform: none;
+        br{
+            display: none;
+        }
+    }
+    p.subtext{
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+}
+.footer.xcredit{
+    color: #888;
+    background-color: #222;
+
+    center{
+        background-color: #222;
+    }
+    a{color: #888;}
+}
+
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px){
