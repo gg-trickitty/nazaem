@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
-    <body>
+    <body ng-app="nazaem" ng-controller="MainCtrl" ng-class="{'pullleft':menuOpen}">
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
@@ -33,36 +33,7 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <a href="index.html" class="navbar-brand"><img src="/images/nazaem-logo.png" alt="Nazaem.bg" /></a>
-                
-                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <div class="collapse navbar-collapse navHeaderCollapse">
-                    
-                    <ul class="nav nav-pills navbar-right">
-                        <li><a href="#" class="btn-success btn">ВХОД</a></li>
-                        <li><a href="#" class="btn-danger btn">НАЗАЕМ</a></li>                        
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">КАК РАБОТИМ</a></li>
-                        <li><a href="#">ЗА НАС</a></li>
-                        <li><a href="#">ВЪПРОСИ</a></li>
-                        <li><a href="#">БЛОГ</a></li>
-                        <li><a href="#">КОНТАКТИ</a></li>                        
-                        <li><a href="#">ПАРТНЬОРИ</a></li>
-                        <!-- <li><a href="#" class="btn-success btn">ВХОД</a></li>
-                        <li><a href="#" class="btn-danger btn">НАЗАЕМ</a></li> -->
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <navheader></navheader>
 
         <div class="container" >
             <h2 style="padding-left: 30px;">За нас</h2>
@@ -132,7 +103,10 @@
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/hammerjs/hammer.js"></script>
+        <script src="bower_components/angular-hammer/angular-hammer.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
