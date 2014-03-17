@@ -20,6 +20,7 @@
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+    
     </head>
     <body>
         <div id="fb-root"></div>
@@ -72,246 +73,268 @@
                    <p>
                        Ако сте взели заем от нас, ние автоматично ще попълним данните от предходната Ви регистрация и ще Ви спестим времето за попълване. В този случай - прегледайте вече попълнените си данни и ги актуализирайте, ако е необходимо.
                    </p>
-                   <div class="nav">
+                   <div id="nz-tabs">                       
                        <ul>
-                        <li><a  class="active">Аз съм <strong>нов</strong> потребител</a></li>
-                        <li><a href="form-login.html">Аз съм <strong>регистриран</strong> потребител</a></li>
+                            <li class="active"><a  href="#register" data-toggle="tab" class="active">Аз съм <strong>нов</strong> потребител</a></li>
+                            <li><a href="#login" data-toggle="tab" href="form-login.html">Аз съм <strong>регистриран</strong> потребител</a></li>
                        </ul>
-                   </div>
-                   <div class="">
-                        <h4>Регистрация на нов потребител</h4>
-                        <p>Ние се нуждаем от Вашите лични данни, за да оценим кандидатура Ви. Предоставянето на пълна и точна информация по време на кандидатстването за заем, увеличава вероятността молбата Ви да бъде одобрена. Предоставената от Вас информация е <a href="">напълно защитена</a>. Ако искате да научите повече за това как събираме и използваме личните Ви данни, моля прочетете нашата <a href="#">Политика за поверителност</a>.</p>
-                        <p>За да бъдат разгледани документите Ви ще е необходимо след приключване на регистрацията Ви да изпратите кратко текстово съобщение (sms) от номера, с който сте се регистрирали. Съобщението е на стойност 0.60 лв.</p>
-                        <div class="nz-data active">
-                            <div class="tab-vert-title active">
-                                <div class="tab-vert-num">1</div>
-                                <h3>Лични данни</h3>                            
-                            </div>
-                            <div class="nz-data-title"><h3>Лични данни</h3></div>
-
-                            <form class="form-inline clearfix" role="form">
-                                <div class="row">
-                                  <div class="form-group">
-                                    <label for="exampleInputEmail2">Име</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail2">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="exampleInputPassword2">Презиме</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword2" >
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="exampleInputPassword2">Фамилия</label>
-                                    <input type="text" class="form-control last-col" id="exampleInputPassword2" >
-                                  </div>
-                                </div>
-
-                                <div class="row">
-                                  <div class="form-group">
-                                    <label for="exampleInputEmail2">E-mail адрес</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail2">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="exampleInputEGN">ЕГН</label>
-                                    <input type="text" class="form-control" id="exampleInputEGN" >
-                                  </div>
-                                  <div class="form-group">
-                                    <label>Пол</label>
-                                    <div class="nz-dropdown nz-dropdown-md">
-                                        <span class="arrow"></span>
-                                        <select class="form-control last-col">
-                                            <option>Изберете пол</option>
-                                            <option>Жена</option>
-                                            <option>Мъж</option>
-                                        </select>
+                       <div class="tab-content">
+                           <div id="register" class="tab-pane fade in active">
+                                <h4>Регистрация на нов потребител</h4>
+                                <p>Ние се нуждаем от Вашите лични данни, за да оценим кандидатура Ви. Предоставянето на пълна и точна информация по време на кандидатстването за заем, увеличава вероятността молбата Ви да бъде одобрена. Предоставената от Вас информация е <a href="">напълно защитена</a>. Ако искате да научите повече за това как събираме и използваме личните Ви данни, моля прочетете нашата <a href="#">Политика за поверителност</a>.</p>
+                                <p>За да бъдат разгледани документите Ви ще е необходимо след приключване на регистрацията Ви да изпратите кратко текстово съобщение (sms) от номера, с който сте се регистрирали. Съобщението е на стойност 0.60 лв.</p>
+                                <div class="nz-data active">
+                                    <div class="tab-vert-title active">
+                                        <div class="tab-vert-num">1</div>
+                                        <h3>Лични данни</h3>                            
                                     </div>
-                                  </div>
-                                </div>
+                                    <div class="nz-data-title"><h3>Лични данни</h3></div>
 
-                                
-
-                                <div class="nz-data-title"><h3>Лична карта</h3></div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail2">Лична карта номер</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail2">
-                                    </div>
-                                      <div class="form-group">
-                                        <label for="exampleInputEGN">Издадена на</label>
-                                        <input type="text" class="form-control" id="exampleInputEGN" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Издадена от МВР</label>
-                                        <input type="text" class="form-control last-col" id="exampleInputEGN" >
-                                      </div>
-                                </div>
-
-
-
-
-                                <div class="nz-data-title"><h3>Данни за контакти</h3></div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail2">Личен мобилен телефон</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail2">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEGN">Допълнителен телефон за връзка</label>
-                                        <input type="text" class="form-control" id="exampleInputEGN" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Име за контакт</label>
-                                        <input type="text" class="form-control last-col" id="exampleInputEGN" >
-                                    </div>
-                                </div>
-                                <div class="row nz-sub">
-                                    <div class="col-md-4">
-                                        
-                                    </div>
-                                    <div class="col-md-4">
-                                        <span>Втори личен или на роднина/приятел</span>
-                                    </div>
-                                    <div class="col-md-4 last-col">
-                                        <span>Име на лицето от допълнителния контакт за връзка</span>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="nz-data-title"><h3>Настоящ адрес</h3></div>
-                                <div class="row nz-address">
-                                    <div class="col-md-4 first-col">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail2">Град/село</label>
+                                    <form class="form-inline clearfix" role="form">
+                                        <div class="row">
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail2">Име</label>
                                             <input type="text" class="form-control" id="exampleInputEmail2">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword2">Презиме</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword2" >
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword2">Фамилия</label>
+                                            <input type="text" class="form-control last-col" id="exampleInputPassword2" >
+                                          </div>
                                         </div>
-                                    </div>
-                                     <div class="col-md-4">
+
+                                        <div class="row">
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail2">E-mail адрес</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail2">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEGN">ЕГН</label>
+                                            <input type="text" class="form-control" id="exampleInputEGN" >
+                                          </div>
+                                          <div class="form-group">
+                                            <label>Пол</label>
+                                            <div class="nz-dropdown nz-dropdown-md">
+                                                <span class="arrow"></span>
+                                                <select class="form-control last-col">
+                                                    <option>Изберете пол</option>
+                                                    <option>Жена</option>
+                                                    <option>Мъж</option>
+                                                </select>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        
+
+                                        <div class="nz-data-title"><h3>Лична карта</h3></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail2">Лична карта номер</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail2">
+                                            </div>
+                                              <div class="form-group">
+                                                <label for="exampleInputEGN">Издадена на</label>
+                                                <input type="text" class="form-control" id="exampleInputEGN" >
+                                              </div>
+                                              <div class="form-group">
+                                                <label>Издадена от МВР</label>
+                                                <input type="text" class="form-control last-col" id="exampleInputEGN" >
+                                              </div>
+                                        </div>
+
+
+
+
+                                        <div class="nz-data-title"><h3>Данни за контакти</h3></div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail2">Личен мобилен телефон</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail2">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEGN">Допълнителен телефон за връзка</label>
+                                                <input type="text" class="form-control" id="exampleInputEGN" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Име за контакт</label>
+                                                <input type="text" class="form-control last-col" id="exampleInputEGN" >
+                                            </div>
+                                        </div>
+                                        <div class="row nz-sub">
+                                            <div class="col-md-4">
+                                                
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span>Втори личен или на роднина/приятел</span>
+                                            </div>
+                                            <div class="col-md-4 last-col">
+                                                <span>Име на лицето от допълнителния контакт за връзка</span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="nz-data-title"><h3>Настоящ адрес</h3></div>
+                                        <div class="row nz-address">
+                                            <div class="col-md-4 first-col">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail2">Град/село</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail2">
+                                                </div>
+                                            </div>
+                                             <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEGN">Булевард</label>
+                                                    <input type="text" class="form-control input-md" id="exampleInputEGN" >
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Номер</label>
+                                                    <input type="text" class="form-control input-xmd" id="exampleInputEGN" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 last-col-lg">
+                                                <div class="multi-label">Блок №/Вход/Етаж/Апартамент</div>
+                                                <div class="form-group">                                            
+                                                    <input type="text" class="form-control input-sm" id="exampleInputEGN" >
+                                                </div>
+                                                <div class="form-group">                                            
+                                                    <input type="text" class="form-control input-sm" id="exampleInputEGN" >                                            
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control input-sm" id="exampleInputEGN" >                                            
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control input-sm last-col" id="exampleInputEGN" >
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row nz-address nz-address-period">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail2">Време на текущия адрес</label>
+                                                <div class="nz-dropdown">
+                                                    <span class="arrow"></span>
+                                                    <select class="form-control">
+                                                        <option>0 години</option>
+                                                        <option>1 година</option>
+                                                        <option>2 години</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" style="margin-top: 29px;">
+                                                <div class="nz-dropdown">
+                                                    <span class="arrow"></span>
+                                                    <select class="form-control">
+                                                        <option>0 месеца</option>
+                                                        <option>1 месец</option>
+                                                        <option>2 месеца</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="nz-data-title"><h3>Адрес по лична карта</h3></div>
                                         <div class="form-group">
-                                            <label for="exampleInputEGN">Булевард</label>
-                                            <input type="text" class="form-control input-md" id="exampleInputEGN" >
+                                            <label class="nz-checkbox-label">
+                                            <input type="checkbox" class="form-control" id="id-address" style="width: auto; margin-right: 6px; padding-bottom: 11px; margin-bottom: 5px; height: auto;" />Настоящият ми адрес не съвпада с адреса по лична карта</label>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Номер</label>
-                                            <input type="text" class="form-control input-xmd" id="exampleInputEGN" >
+                                         <div class="row nz-address-id">
+                                            <div class="form-group col-lg-4">
+                                                <h4>Жилище</h4>
+                                                <div class="nz-dropdown">
+                                                    <span class="arrow"></span>
+                                                    <select class="form-control">
+                                                        <option disabled selected>Моля изберете</option>
+                                                        <option>1 месец</option>
+                                                        <option>2 месеца</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-lg-4 ">
+                                                <h4>Образование</h4>
+                                                <div class="nz-dropdown">
+                                                    <span class="arrow"></span>
+                                                    <select class="form-control">
+                                                        <option disabled selected>Моля изберете</option>
+                                                        <option>1 месец</option>
+                                                        <option>2 месеца</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-lg-4 last-col">
+                                                <h4>Семейно положение</h4>
+                                                <div class="nz-dropdown">
+                                                    <span class="arrow"></span>
+                                                    <select class="form-control">
+                                                        <option disabled selected>Моля изберете</option>
+                                                        <option>1 месец</option>
+                                                        <option>2 месеца</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                         </div>
+                                         <div class="napred">
+                                            <span>*Всички полета задължителни</span>
+                                            <button type="submit" class="btn btn-default nz-btn">НАПРЕД</button>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 last-col-lg">
-                                        <div class="multi-label">Блок №/Вход/Етаж/Апартамент</div>
-                                        <div class="form-group">                                            
-                                            <input type="text" class="form-control input-sm" id="exampleInputEGN" >
-                                        </div>
-                                        <div class="form-group">                                            
-                                            <input type="text" class="form-control input-sm" id="exampleInputEGN" >                                            
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control input-sm" id="exampleInputEGN" >                                            
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control input-sm last-col" id="exampleInputEGN" >
-                                        </div>
+                                    </form>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="nz-data">
+                                    <div class="tab-vert-title">
+                                        <div class="tab-vert-num">2</div>
+                                        <h3>Работа</h3>
                                     </div>
                                 </div>
 
-                                <div class="row nz-address nz-address-period">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail2">Време на текущия адрес</label>
-                                        <div class="nz-dropdown">
-                                            <span class="arrow"></span>
-                                            <select class="form-control">
-                                                <option>0 години</option>
-                                                <option>1 година</option>
-                                                <option>2 години</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" style="margin-top: 29px;">
-                                        <div class="nz-dropdown">
-                                            <span class="arrow"></span>
-                                            <select class="form-control">
-                                                <option>0 месеца</option>
-                                                <option>1 месец</option>
-                                                <option>2 месеца</option>
-                                            </select>
-                                        </div>
+                                <div class="nz-data">
+                                    <div class="tab-vert-title active">
+                                        <div class="tab-vert-num">3</div>
+                                        <h3>E-mail</h3>
                                     </div>
                                 </div>
 
+                                <div class="nz-data">                            
+                                    <div class="tab-vert-title active">
+                                        <div class="tab-vert-num">4</div>
+                                        <h3>Банка</h3>
+                                    </div>
+                                </div>
 
-                                <div class="nz-data-title"><h3>Адрес по лична карта</h3></div>
-                                <div class="form-group">
-                                    <label class="nz-checkbox-label">
-                                    <input type="checkbox" class="form-control" id="id-address" style="width: auto; margin-right: 6px; padding-bottom: 11px; margin-bottom: 5px; height: auto;" />Настоящият ми адрес не съвпада с адреса по лична карта</label>
+                                <div class="nz-data">
+                                        <div class="tab-vert-title active">
+                                            <div class="tab-vert-num">5</div>
+                                            <h3>Потвърждение</h3>
+                                        </div>
                                 </div>
-                                 <div class="row nz-address-id">
-                                    <div class="form-group col-lg-4">
-                                        <h4>Жилище</h4>
-                                        <div class="nz-dropdown">
-                                            <span class="arrow"></span>
-                                            <select class="form-control">
-                                                <option disabled selected>Моля изберете</option>
-                                                <option>1 месец</option>
-                                                <option>2 месеца</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-lg-4 ">
-                                        <h4>Образование</h4>
-                                        <div class="nz-dropdown">
-                                            <span class="arrow"></span>
-                                            <select class="form-control">
-                                                <option disabled selected>Моля изберете</option>
-                                                <option>1 месец</option>
-                                                <option>2 месеца</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-lg-4 last-col">
-                                        <h4>Семейно положение</h4>
-                                        <div class="nz-dropdown">
-                                            <span class="arrow"></span>
-                                            <select class="form-control">
-                                                <option disabled selected>Моля изберете</option>
-                                                <option>1 месец</option>
-                                                <option>2 месеца</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="napred">
-                                    <span>*Всички полета задължителни</span>
-                                    <button type="submit" class="btn btn-default nz-btn">НАПРЕД</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="nz-data">
-                            <div class="tab-vert-title">
-                                <div class="tab-vert-num">2</div>
-                                <h3>Работа</h3>
                             </div>
-                        </div>
+                        </div><!-- end tabcontent -->
 
-                        <div class="nz-data">
-                            <div class="tab-vert-title active">
-                                <div class="tab-vert-num">3</div>
-                                <h3>E-mail</h3>
+                        <div class="tab-content">
+                            <div id="login" class="tab-pane fade">
+                                <h4>Вход за клиенти</h4>
+                                <p>Моля въведете вашия е-мейл адрес и парола</p>
+                               <form class="form-inline" role="form">
+                                  <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail2">E-mail</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail2">
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="sr-only" for="exampleInputPassword2">Парола</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword2" >
+                                  </div>
+                                  <button type="submit" class="btn btn-default nz-btn">ВХОД</button>
+                                  <a href="#">Забравена парола &#187;</a>
+                                </form>
                             </div>
-                        </div>
 
-                        <div class="nz-data">                            
-                            <div class="tab-vert-title active">
-                                <div class="tab-vert-num">4</div>
-                                <h3>Банка</h3>
-                            </div>
-                        </div>
-
-                        <div class="nz-data">
-                                <div class="tab-vert-title active">
-                                    <div class="tab-vert-num">5</div>
-                                    <h3>Потвърждение</h3>
-                                </div>
-                        </div>
-                    </div>
+                        </div><!-- end tabcontent -->
+                    </div><!-- end nz-tabs -->
                </div>
            
                <div class="col-lg-4 nz-sidebar">
@@ -399,6 +422,7 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

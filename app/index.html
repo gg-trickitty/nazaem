@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <title>nazaem</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
         <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         
@@ -119,7 +119,7 @@
                     <div class="row calc-top">
                         <div class="col-lg-6 top-data">
                             <h4>ИСКАНА СУМА</h4>
-                            <span><span ng-bind="amount"></span><small>лв</small></span>
+                            <span class="calc-top-amount"><span ng-bind="amount"></span><small>лв</small></span>
                             <div class="nz-slider">
                                 <div class="fill" ng-style="fillAmount()">
                                     <div class="handle" for="amount" hm-drag="drag($event,'amount')" hm-dragstart="dragstart($event,'amount')" hm-dragend="dragend($event,'amount')"></div>
@@ -160,15 +160,15 @@
                     </div>
                     <div class="row calc-math">
                         <div class="base">
-                            РАЗМЕР НА ЗАЕМА
+                            <h5>РАЗМЕР НА ЗАЕМА</h5>
                             <span><span ng-bind="amount"></span><small>лв</small></span>
                         </div>
                         <div class="base">
-                            ТАКСА
+                            <h5>ТАКСА</h5>
                             <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
                         </div>
                         <div class="calc-sum">
-                            СУМА ЗА ВРЪЩАНЕ
+                            <h5>СУМА ЗА ВРЪЩАНЕ</h5>
                             <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
                         </div>
                         

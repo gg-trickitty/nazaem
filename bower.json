@@ -6,7 +6,8 @@
     "jquery": "~1.11.0",
     "angular": "~1.2.14",
     "hammerjs": "~1.0.8",
-    "angular-hammer": "~1.0.3"
+    "angular-hammer": "~1.0.3",
+    "jquery-ui": "~1.10.4"
   },
   "devDependencies": {}
 }

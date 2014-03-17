@@ -108,3 +108,8 @@ directive('navheader', [function () {
 		}
 	};
 }])
+
+//jQuery UI tab menu functionality
+$(function() {
+    $( "#nz-tabs" ).tabs();
+});

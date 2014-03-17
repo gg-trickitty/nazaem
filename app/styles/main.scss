@@ -256,6 +256,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 .navbar.navbar-default .navbar-nav li a{        
     padding-top: 0;
     padding-bottom: 0;
+    font-weight: normal;
 }
 
 .navbar-collapse{
@@ -759,6 +760,17 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             float: left;                     
             text-transform: uppercase;
             //position: relative; 
+
+            &.active a{
+                padding-bottom: 12px;
+                margin-top: -3px;               
+                color: #4c4c4c;
+                clear: both;
+                border-bottom: none; 
+                font-size: 14px; 
+                border-color: #ccc;
+                background-color: #fff;
+            }
                
 
             a{                
@@ -769,23 +781,18 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
                 border: 1px solid #dfdfdf;
                 font-size: 12px;
                 margin-right: 9px;
-                border-bottom: none;                
+                border-bottom: none; 
+                text-decoration: none;               
                 &:hover{
                     text-decoration: none;
                     color: #4c4c4c;
                     padding-bottom: 14px;
                     margin-top: -3px;               
                     color: #4c4c4c;
+                    text-decoration: none;
                 }
-                &.active{                
-                    padding-bottom: 12px;
-                    margin-top: -3px;               
-                    color: #4c4c4c;
-                    clear: both;
-                    border-bottom: none; 
-                    font-size: 14px; 
-                    border-color: #ccc;
-                    background-color: #fff;
+                &:focus{
+                    outline: none;
                 }
             }
 
@@ -1067,7 +1074,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
     padding-left: 30px;
     position: absolute;
     bottom: 30px;
-    right: 180px;
+    right: -96px;
 }
 
 .about-us .nz-sidebar{
@@ -1119,6 +1126,7 @@ body.xcredit{
     .navbar.navbar-default .navbar-nav li a{        
         padding-top: 0;
         padding-bottom: 0;
+
     }
     .btn-success{
         background-color: #d96d00;
@@ -1159,7 +1167,7 @@ body.xcredit{
 
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px){
+@media screen and (min-width:768px){
     .container {
         max-width: 1170px;
         &.login{
@@ -1186,12 +1194,12 @@ body.xcredit{
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width:800px){
     .nz-calc-home{display: none;}
     .nz-calc-home-mobile{display: block;}
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width:320px){
     .container .info .nz-data ul li:first-child, .container .info .nz-data ul li:first-child span{
         padding: 0;
     }
