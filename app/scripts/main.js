@@ -30,7 +30,9 @@ directive('height100', [function () {
 		link: function ($scope, el, attrs) {
 			function res(){
 				if($win.width()<=768)
-				$(el).css({height:$doc.height()});
+					$(el).css({height:$doc.height()});
+				else 
+					$(el).css({height:'auto'});
 			}
 			res();
 			$win.resize(res);
