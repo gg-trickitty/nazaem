@@ -1,5 +1,6 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
+@import "compass/css3/";
 // bower:scss
 $brand-primary:red;
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
@@ -23,6 +24,18 @@ $border-radius-small: 6px;
 body {
     background-color: #eee;
     font-family: Helvetica, Arial, sans-serif;
+    &.pullleft{
+        @include transform(translate(-100%));
+    }
+    @media screen and (max-width:768px){
+        @include transform(translate(-70px));
+        overflow-x: hidden;
+        @include transition(all .4s);
+        &>*{
+            @include transform(translate(70px));
+        }
+        // margin-left: 70px;
+    }
 }
 
 a{
@@ -184,6 +197,13 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
         padding: 10px 35px 15px;
         background-color: #fff;
     }
+    .navbar-toggle{
+        margin-right: -15px;
+        @include transform(translateY(3px))
+    }
+    @media screen and (max-width:768px){
+        position: static;
+    }
 }
 
 .navbar.navbar-default li a{
@@ -198,6 +218,33 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 
 .navbar.navbar-default li a.btn-danger{
     background-color: #ea4b24;
+}
+
+.navbar-collapse{
+    @media screen and (max-width:768px){
+        width: 100%;
+        margin: 0!important;
+        padding: 0;
+        // height:100%!important;
+        max-height: inherit;
+        left: 0px;
+        top: 0;
+        display: block;
+        position: absolute;
+        z-index: 99999;
+        background:#333;
+        overflow: hidden;
+        @include transform( translate(100%) );
+        &.in{
+            // @include transform( translate(70px));
+            overflow-y: visible;
+        }
+        &.collapsing{
+            overflow: visible;
+            height: 100%;
+            position: absolute;
+        }
+    }
 }
 
 .nav-pills {
