@@ -71,33 +71,33 @@
                             <p class="subtext">Можем да ви дадем  на заем до <strong>399лв</strong> и да ви преведем<br /> парите по Вашата сметка до <strong>13:23 часа</strong> днес.</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 nz-calc-home">
-                        <form>
+                    <div class="col-sm-6 nz-calc-home" calculator>
+                        <form ng-submit="apply()">
                             <div class="row calc-top">
                                 <div class="col-lg-6 top-data">
                                     <h4>ИСКАНА СУМА</h4>
-                                    <span>310<small>лв</small></span>
+                                    <span class="calc-top-amount"><span ng-bind="amount"></span><small>лв</small></span>
                                     <div class="nz-slider">
-                                        <div class="fill">
-                                            <div class="handle"></div>
+                                        <div class="fill" ng-style="fillAmount()">
+                                            <div class="handle" hm-drag="drag($event,'amount')" hm-dragstart="dragstart($event,'amount')" hm-dragend="dragend($event)"></div>
                                         </div>
                                     </div>
                                     <div class="range">
-                                        <div class="more"><!-- <img src="images/up.png" /> --></div>
-                                        <div><!-- <img src="images/down.png" /> --></div>
+                                        <div class="more" hm-tap="add.amount(10)"><!-- <img src="images/up.png" /> --></div>
+                                        <div hm-tap="add.amount(-10)"><!-- <img src="images/down.png" /> --></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 top-data">
                                     <h4>СРОК</h4>
-                                    <span class="calc-top-period">25<small>дни</small></span>
+                                    <span class="calc-top-period"><span ng-bind="days"></span><small>дни</small></span>
                                     <div class="nz-slider orange">
-                                        <div class="fill">
-                                            <div class="handle"></div>
+                                        <div class="fill" ng-style="fillDays()">
+                                            <div class="handle" hm-drag="drag($event,'days')" hm-dragstart="dragstart($event,'days')" hm-dragend="dragend($event)"></div>
                                         </div>
                                     </div>
                                     <div class="range">
-                                        <div class="more"><!-- <img src="images/up.png" /> --></div>
-                                        <div><!-- <img src="images/down.png" /> --></div>
+                                        <div class="more" hm-tap="add.days(2)"><!-- <img src="images/up.png" /> --></div>
+                                        <div hm-tap="add.days(-2)"><!-- <img src="images/down.png" /> --></div>
                                     </div>
                                 </div>
                             </div>
@@ -118,51 +118,51 @@
                             <div class="row calc-math">
                                 <div class="col-sm-4">
                                     РАЗМЕР НА ЗАЕМА
-                                    <span>310<small>лв</small></span>
+                                    <span><span ng-bind="amount"></span><small>лв</small></span>
                                 </div>
                                 <div class="col-sm-4">
                                     ТАКСА
-                                    <span>61.04<small>лв</small></span>
+                                    <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
                                 </div>
                                 <div class="col-sm-4 calc-sum">
                                     СУМА ЗА ВРЪЩАНЕ
-                                    <span>371.04<small>лв</small></span>
+                                    <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
                                 </div>
                             </div>
-                           <center> <a href="#" class="btn btn-danger nz-btn">ВЗЕМИ ЗАЕМ</a></center>
+                           <center> <button type="submit" ng-disabled="applying" class="btn btn-danger nz-btn">ВЗЕМИ ЗАЕМ</button></center>
                         </form>
                     </div>
                 </div>
                <!-- </div> -->
             </div><!-- header -->
 
-            <div class="col-sm-6 nz-calc-home-mobile">
+            <div class="col-sm-6 nz-calc-home-mobile" calculator>
                 <form>
                     <div class="row calc-top">
                         <div class="col-lg-6 top-data">
                             <h4>ИСКАНА СУМА</h4>
-                            <span>310<small>лв</small></span>
+                            <span><span ng-bind="amount"></span><small>лв</small></span>
                             <div class="nz-slider">
-                                <div class="fill">
-                                    <div class="handle"></div>
+                                <div class="fill" ng-style="fillAmount()">
+                                    <div class="handle" for="amount" hm-drag="drag($event,'amount')" hm-dragstart="dragstart($event,'amount')" hm-dragend="dragend($event,'amount')"></div>
                                 </div>
                             </div>
                             <div class="range">
-                                <div class="more"><!-- <img src="images/up.png" /> --></div>
-                                <div><!-- <img src="images/down.png" /> --></div>
+                                <div class="more" hm-tap="add.amount(10)"><!-- <img src="images/up.png" /> --></div>
+                                <div hm-tap="add.amount(-10)"><!-- <img src="images/down.png" /> --></div>
                             </div>
                         </div>
                         <div class="col-lg-6 top-data">
                             <h4>СРОК</h4>
-                            <span class="calc-top-period">25<small>дни</small></span>
+                            <span class="calc-top-period"><span ng-bind="days"></span><small>дни</small></span>
                             <div class="nz-slider orange">
-                                <div class="fill">
-                                    <div class="handle"></div>
+                                <div class="fill" ng-style="fillDays()">
+                                    <div class="handle" for="days" hm-drag="drag($event,'days')" hm-dragstart="dragstart($event,'days')" hm-dragend="dragend($event,'days')"></div>
                                 </div>
                             </div>
                             <div class="range">
-                                <div class="more"><!-- <img src="images/up.png" /> --></div>
-                                <div><!-- <img src="images/down.png" /> --></div>
+                                <div class="more" hm-tap="add.days(2)"><!-- <img src="images/up.png" /> --></div>
+                                <div hm-tap="add.days(-2)"><!-- <img src="images/down.png" /> --></div>
                             </div>
                         </div>
                     </div>
@@ -183,15 +183,15 @@
                     <div class="row calc-math">
                         <div class="base">
                             РАЗМЕР НА ЗАЕМА
-                            <span>310<small>лв</small></span>
+                            <span><span ng-bind="amount"></span><small>лв</small></span>
                         </div>
                         <div class="base">
                             ТАКСА
-                            <span>61.04<small>лв</small></span>
+                            <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
                         </div>
                         <div class="calc-sum">
                             СУМА ЗА ВРЪЩАНЕ
-                            <span>371.04<small>лв</small></span>
+                            <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
                         </div>
                         
                     </div>
