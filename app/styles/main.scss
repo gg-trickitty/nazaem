@@ -1061,7 +1061,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
         }
     }
     span{
-        display: block;
+        display: inline-block;
         font-size: 23px;
         font-weight: 700;
         color: #666;
@@ -1069,8 +1069,8 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             font-weight: normal;
             margin-left: 3px;
         }
-        &.nz-sum{color: #2FB35B; padding-bottom: 7px;}
-        &.nz-period{color: #EA4B24; padding-bottom: 7px;}
+        &.nz-sum, &.nz-sum span{color: #2FB35B; padding-bottom: 7px;}
+        &.nz-period, &.nz-period span{color: #EA4B24; padding-bottom: 7px;}
     }
     .nz-sidebar-final{
         border-top: 1px solid #eee;
@@ -1139,65 +1139,123 @@ body.xcredit{
     .navbar-toggle{
         margin-top: 5px;
     }
-}
 
-.nz-xcredit.navbar .container{
-    background-color: #222;
-    ul{
-        padding-top: 10px;
-    }
+    .navbar .container{
+        background-color: #222;
+        ul{
+            padding-top: 10px;
+        }
 
-    li a{
-        color: #aaa;
-        border-right-color: #444;
-    }
-    li.active a{
-        color: #888;
-    }
-    li a:hover{
-        color: #ccc;
-    }
+        li a{
+            color: #aaa;
+            border-right-color: #444;
+        }
+        li.active a{
+            color: #888;
+        }
+        li a:hover{
+            color: #ccc;
+        }
 
-    .navbar.navbar-default .navbar-nav li a{        
-        padding-top: 0;
-        padding-bottom: 0;
+        .navbar.navbar-default .navbar-nav li a{        
+            padding-top: 0;
+            padding-bottom: 0;
 
-    }
-    .btn-success{
-        background-color: #d96d00;
-        color: #ededed;
-        border: none;    
-    }
-    .btn-danger{
-        background-color: #d12d15;
-        color: #ededed;
-    }
-}
-.jumbo.xcredit{
-    background:rgba(34,34,34,0.7);
-    padding: 30px;
-    margin-top: 226px;
-    h1{
-        font-size: 26px;
-        text-transform: none;
-        br{
-            display: none;
+        }
+        .btn-success{
+            background-color: #d96d00;
+            color: #ededed;
+            border: none;    
+        }
+        .btn-danger{
+            background-color: #d12d15;
+            color: #ededed;
         }
     }
-    p.subtext{
-        font-size: 14px;
-        margin-bottom: 0px;
+    .jumbo{
+        background:rgba(34,34,34,0.7);
+        padding: 30px;
+        margin-top: 177px;
+        h1{
+            font-size: 26px;
+            text-transform: none;
+            br{
+                display: none;
+            }
+        }
+        p.subtext{
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
     }
-}
-.footer.xcredit{
-    color: #888;
-    background-color: #222;
-
-    center{
+    .footer{
+        color: #888;
         background-color: #222;
+
+        center{
+            background-color: #222;
+        }
+        a{color: #888;}
     }
-    a{color: #888;}
 }
+
+// .nz-xcredit.navbar .container{
+//     background-color: #222;
+//     ul{
+//         padding-top: 10px;
+//     }
+
+//     li a{
+//         color: #aaa;
+//         border-right-color: #444;
+//     }
+//     li.active a{
+//         color: #888;
+//     }
+//     li a:hover{
+//         color: #ccc;
+//     }
+
+//     .navbar.navbar-default .navbar-nav li a{        
+//         padding-top: 0;
+//         padding-bottom: 0;
+
+//     }
+//     .btn-success{
+//         background-color: #d96d00;
+//         color: #ededed;
+//         border: none;    
+//     }
+//     .btn-danger{
+//         background-color: #d12d15;
+//         color: #ededed;
+//     }
+// }
+// .jumbo.xcredit{
+//     background:rgba(34,34,34,0.7);
+//     padding: 30px;
+//     margin-top: 226px;
+//     h1{
+//         font-size: 26px;
+//         text-transform: none;
+//         br{
+//             display: none;
+//         }
+//     }
+//     p.subtext{
+//         font-size: 14px;
+//         margin-bottom: 0px;
+//     }
+// }
+// .footer.xcredit{
+//     color: #888;
+//     background-color: #222;
+
+//     center{
+//         background-color: #222;
+//     }
+//     a{color: #888;}
+// }
 
 
 
@@ -1257,6 +1315,8 @@ body.xcredit{
 @media only screen and (max-width:640px){
     .nz-calc-home{display: none;}
     .nz-calc-home-mobile{display: block;}
+
+
 }
 
 @media screen and (max-width:480px){
