@@ -309,7 +309,7 @@
                         </div><!-- end nz-tabs -->
                    </div>
                
-                   <div class="col-lg-4 nz-sidebar">
+                   <div class="col-lg-4 nz-sidebar" ng-hide="!amount">
                        
                        <div class="nz-sidebar-param">
                             <h4>Параметри на заема</h4>
@@ -353,7 +353,7 @@
                             <h5>ДАТА НА ВРЪЩАНЕ</h5>
                             <span class="nz-period" ng-bind="returnDate.getTime() | date">31 март 2014</span>
 
-                            <button class="btn btn-default">отмени</button>
+                            <button class="btn btn-default" hm-tap="clear()">отмени</button>
                         </div> 
 
                                         
