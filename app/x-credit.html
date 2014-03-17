@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
-    <body class="xcredit">
+    <body class="xcredit" ng-app="nazaem" ng-controller="MainCtrl" ng-class="{'pullleft':menuOpen}">
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
@@ -317,7 +317,10 @@
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/hammerjs/hammer.js"></script>
+        <script src="bower_components/angular-hammer/angular-hammer.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

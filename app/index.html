@@ -21,8 +21,9 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
     </head>
-    <body>
-        <div id="fb-root"></div>
+
+    <body ng-app="nazaem" ng-controller="MainCtrl" ng-class="{'pullleft':menuOpen}">
+    <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -37,14 +38,14 @@
             <div class="container">
                 <a href="#" class="navbar-brand"><img src="/images/nazaem-logo.png" alt="Nazaem.bg" /></a>
                 
-                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                <button class="navbar-toggle" hm-tap="menuOpen=!menuOpen" data-toggle="collapse" data-target=".navHeaderCollapse">
                     ☰
                     <!-- <span class="icon-bar" style="color: #000;"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> -->
                 </button>
 
-                <div class="collapse navbar-collapse navHeaderCollapse">
+                <div height100 class="navbar-collapse" hm-swiperight="menuOpen=false;">
                     
                     <ul class="nav nav-pills navbar-right">
                         <li><a href="login.html" class="btn-success btn">ВХОД</a></li>
@@ -61,6 +62,7 @@
                         <!-- <li><a href="#" class="btn-success btn">ВХОД</a></li>
                         <li><a href="#" class="btn-danger btn">НАЗАЕМ</a></li> -->
                     </ul>
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
@@ -294,13 +296,12 @@
             </div> 
 
             <div class="footer clearfix">
-                <center>
+                <center>                                  
+                    <img src="images/noi.png" />
                                   
-                        <img src="images/noi.png" />
-                                      
-                        <img src="images/bnb.png" />  
+                    <img src="images/bnb.png" />  
 
-                        <img src="images/kzld.png" />
+                    <img src="images/kzld.png" />
                 </center>
                 <center><p><a href="#">Бърз кредит</a> • <a href="#">Бързи заеми</a> • <a href="#">Бързи кредити</a> • <a href="#">Заеми</a> • <a href="#">Кредити онлайн</a> <br /> <a href="#">Пари назаем</a> • <a href="#">Кредит лична карта</a> • <a href="#">Кредити без Доказване на Доходи</a> • <a href="#">Потребителски Кредит</a></p></center>
                 <center><p class="text-muted credit">&copy; xCredit.bg е услуга на Pan Balkan Finance AD • Най-лесните и бързи кредити онлайн • Всички права са запазени • Удостоверение № BGR00263<br />
@@ -312,7 +313,10 @@
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/hammerjs/hammer.js"></script>
+        <script src="bower_components/angular-hammer/angular-hammer.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

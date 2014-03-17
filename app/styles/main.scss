@@ -1,5 +1,6 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
+@import "compass/css3/";
 // bower:scss
 $brand-primary:red;
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
@@ -23,6 +24,18 @@ $border-radius-small: 6px;
 body {
     background-color: #eee;
     font-family: Helvetica, Arial, sans-serif;
+    &.pullleft{
+        @include transform(translate(-100%));
+    }
+    @media screen and (max-width:768px){
+        @include transform(translate(-70px));
+        overflow-x: hidden;
+        @include transition(all .4s);
+        &>*{
+            @include transform(translate(70px));
+        }
+        // margin-left: 70px;
+    }
 }
 
 a{
@@ -63,6 +76,10 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
     padding: 0px 0;
     margin-top: -2px; 
     margin-bottom: 0; 
+}
+
+.navbar-default .navbar-collapse{
+
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -192,6 +209,14 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
         padding: 10px 35px 15px;
         background-color: #fff;
     }
+    .navbar-toggle{
+        //margin-right: 5px;
+
+        @include transform(translateY(3px))
+    }
+    @media screen and (max-width:768px){
+        position: static;
+    }
 }
 
 .navbar.navbar-default li a{
@@ -209,9 +234,74 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
     background-color: #ea4b24;
 }
 
+.navbar.navbar-default .navbar-nav{
+    margin-top: 5px;
+}
+
+.navbar.navbar-default .navbar-nav li a{        
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-collapse{
+    @media screen and (max-width:768px){
+        width: 100%;
+        margin: 0!important;
+        padding: 0;
+        // height:100%!important;
+        max-height: inherit;
+        left: 0px;
+        top: 0;
+        display: block;
+        position: absolute;
+        z-index: 99999;
+        background:#333;
+        overflow: hidden;
+
+        .nav-pills {
+            background-color: #514f51;
+            margin-left: 0;
+            padding: 14px 30px 18px;
+            a.btn{
+                font-size: 16px;
+                font-weight: bold!important;
+                padding: 9px 22px 8px;
+                &.btn-success{
+                    position: absolute;
+                    bottom: -410px;
+                    left: 4px;
+                }
+            }
+        }
+
+        .navbar-nav{
+            padding: 5px 30px 25px;
+            border-bottom: 1px solid #222;            
+        }
+        li a{
+            font-size: 18px;
+            font-weight: normal!important;
+            color: #fff!important;
+        }
+        @include transform( translate(100%) );
+        &.in{
+            // @include transform( translate(70px));
+            overflow-y: visible;
+        }
+        &.collapsing{
+            overflow: visible;
+            height: 100%;
+            position: absolute;
+        }
+    }
+}
+
 .nav-pills {
     //padding: 10px 0;
     //margin-top: -10px;
+    li a{
+        border-radius: 6px;
+    }
     margin-left: 30px;
     li + li{
         margin-left: 7px;
@@ -978,12 +1068,15 @@ body.xcredit{
         //background-image: none;
         background: transparent;
     }
+    .navbar-toggle{
+        margin-top: 5px;
+    }
 }
 
 .nz-xcredit.navbar .container{
     background-color: #222;
     ul{
-        padding-top: 9px;
+        padding-top: 10px;
     }
 
     li a{
@@ -995,6 +1088,11 @@ body.xcredit{
     }
     li a:hover{
         color: #ccc;
+    }
+
+    .navbar.navbar-default .navbar-nav li a{        
+        padding-top: 0;
+        padding-bottom: 0;
     }
     .btn-success{
         background-color: #d96d00;
