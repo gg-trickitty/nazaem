@@ -99,7 +99,7 @@
                                     <span><span ng-bind="amount"></span><small>лв</small></span>
                                 </div>
                                 <div class="col-sm-4">
-                                    ТАКСА
+                                    ТАКСА<br />
                                     <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
                                 </div>
                                 <div class="col-sm-4 calc-sum">
@@ -159,16 +159,16 @@
                         </div>
                     </div>
                     <div class="row calc-math">
-                        <div class="base">
-                            <h5>РАЗМЕР НА ЗАЕМА</h5>
+                        <div class="base col-lg-4">
+                            РАЗМЕР НА ЗАЕМА
                             <span><span ng-bind="amount"></span><small>лв</small></span>
                         </div>
-                        <div class="base">
-                            <h5>ТАКСА</h5>
+                        <div class="base col-lg-4">
+                            ТАКСА
                             <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
                         </div>
-                        <div class="calc-sum">
-                            <h5>СУМА ЗА ВРЪЩАНЕ</h5>
+                        <div class="calc-sum col-lg-4">
+                            СУМА ЗА ВРЪЩАНЕ
                             <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
                         </div>
                         
@@ -206,7 +206,7 @@
                     <p> - Възможност за <span class="blue">удължаване на заема</span>.</p>
                 </div>
 
-                <div class="col-md-2 nz-data">                    
+                <div class="col-lg-2 nz-data">                    
                     <h5>ПЪРВИ ЗАЕМ</h5>
                     <ul>
                         <li>сума/срок<span>20 дни</span></li>
@@ -217,7 +217,7 @@
                     </ul>
                 </div>
 
-                <div class="col-md-2 nz-data">                    
+                <div class="col-lg-2 nz-data">                    
                     <h5>ВТОРИ-ШЕСТИ ЗАЕМ</h5>
                     <ul>
                         <li>сума/срок<span>20 дни</span></li>
@@ -229,7 +229,7 @@
 
                 </div>
 
-                <div class="col-md-2 nz-data">                    
+                <div class="col-lg-2 nz-data">                    
                     <h5>СЕДМИ ЗАЕМ</h5>
                     <ul>
                         <li>сума/срок<span>20 дни</span></li>
