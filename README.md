@@ -7,8 +7,8 @@ This is a repo for the new website of nazaem.bg
 
 ##Installation
 
-In order to run this you need Node & Ruby installed on your machine.
-You also need the following Node Packages:
+In order to run this you need Node installed on your machine.
+Once installed, you need the following packages:
 
     npm install -g grunt
     npm install -g bower
@@ -31,6 +31,10 @@ To build the project for distribution, please:
 To view the distribution:
 
 	grunt serve:build
+
+To edit the SCSS files, you need to install Ruby. Then from terminal:
+
+	gem install compass
 
 
 ####Notes on SEO
