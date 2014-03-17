@@ -76,6 +76,9 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
     padding: 0px 0;
     margin-top: -2px; 
     margin-bottom: 0; 
+    &:hover, &:active{
+        border-bottom: 3px solid #444;
+    }
 }
 
 .navbar-default .navbar-collapse{
@@ -236,6 +239,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             .navbar-toggle{
                 background: #514f51;
                 color: #888888;
+                border-bottom: 3px solid #444;
             }
         }
         .navbar-toggle{
@@ -300,16 +304,21 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 
         .nav-pills {
             background-color: #514f51;
-            margin-left: 0;
-            padding: 14px 30px 17px;
+            margin-left: 0;margin: 0 auto;
+            //padding: 8px 30px 17px;
+            border-bottom: 3px solid #444;
+            li{
+                padding: 18px 11px 14px;
+                margin: 0 auto;
+            }
             a.btn{
                 font-size: 16px;
                 font-weight: bold!important;
                 padding: 9px 22px 8px;
                 &.btn-success{
                     position: absolute;
-                    bottom: -405px;
-                    left: 4px;
+                    bottom: -395px;
+                    left: 34px;
                 }
             }
         }
@@ -1223,7 +1232,7 @@ body.xcredit{
     .nz-calc-home-mobile{display: block;}
 }
 
-@media screen and (max-width:320px){
+@media screen and (max-width:479px){
     .container .info .nz-data ul li:first-child, .container .info .nz-data ul li:first-child span{
         padding: 0;
     }
@@ -1242,9 +1251,12 @@ body.xcredit{
 
     .navbar.navbar-default{
         .container{
-            padding: 15px 5px;
+            padding: 12px 5px;
         }
     } 
+    .header{
+        margin-top: 75px;
+    }
 
     .header .row {
         width: 100%;
