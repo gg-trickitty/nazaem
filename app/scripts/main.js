@@ -97,3 +97,14 @@ directive('height100', [function () {
 		}
 	};
 }])
+.
+directive('navheader', [function () {
+	return {
+		restrict: 'E',
+		replace:'true',
+		templateUrl:'partials/header.html',
+		link: function ($scope, el, attrs) {
+			
+		}
+	};
+}])
