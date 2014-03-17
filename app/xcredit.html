@@ -1,0 +1,325 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>nazaem</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    </head>
+
+    <body class="xcredit" ng-app="nazaem" ng-controller="MainCtrl" ng-class="{'pullleft':menuOpen}">
+    <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <navheader></navheader>
+
+        <div class="container x-header">
+             <div class="header">
+               <!-- <div class="panel panel-default"> -->
+               <!--  <img src="images/main-header.jpg" width="100%" /> -->
+                <div class="row">
+                    <div class="col-lg-6 jumbo-text">
+                        <div class="jumbo xcredit">
+                            <h1>Вземете кредит за<br /> следващото си приключение!</h1>
+                            
+
+                            <p class="subtext">Иван взе кредит, отиде на сноуборд в Алпите, и не трябваше да го връща.. <a href="#">научи повече &#187;</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 nz-calc-home" calculator>
+                        <form ng-submit="apply()">
+                            <div class="row calc-top">
+                                <div class="col-sm-6 top-data">
+                                    <h4>ИСКАНА СУМА</h4>
+                                    <span class="calc-top-amount"><span ng-bind="amount"></span><small>лв</small></span>
+                                    <div class="nz-slider">
+                                        <div class="fill" ng-style="fillAmount()">
+                                            <div class="handle" hm-drag="drag($event,'amount')" hm-dragstart="dragstart($event,'amount')" hm-dragend="dragend($event)"></div>
+                                        </div>
+                                    </div>
+                                    <div class="range">
+                                        <div class="more" hm-tap="add.amount(10)"><!-- <img src="images/up.png" /> --></div>
+                                        <div hm-tap="add.amount(-10)"><!-- <img src="images/down.png" /> --></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 top-data">
+                                    <h4>СРОК</h4>
+                                    <span class="calc-top-period"><span ng-bind="days"></span><small>дни</small></span>
+                                    <div class="nz-slider orange">
+                                        <div class="fill" ng-style="fillDays()">
+                                            <div class="handle" hm-drag="drag($event,'days')" hm-dragstart="dragstart($event,'days')" hm-dragend="dragend($event)"></div>
+                                        </div>
+                                    </div>
+                                    <div class="range">
+                                        <div class="more" hm-tap="add.days(2)"><!-- <img src="images/up.png" /> --></div>
+                                        <div hm-tap="add.days(-2)"><!-- <img src="images/down.png" /> --></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row calc-promo">
+                                <div class="col-sm-6">
+                                    <label>ПРОМО КОД<small>за намаление на касата</small></label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                      <input type="text" class="form-control">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">OK</button>
+                                      </span>
+                                    </div><!-- /input-group -->
+                                </div>
+                            </div>
+                            <div class="row calc-math">
+                                <div class="base col-sm-4">
+                                    РАЗМЕР НА ЗАЕМА<br />
+                                    <span><span ng-bind="amount"></span><small>лв</small></span>
+                                </div>
+                                <div class="base col-sm-4">
+                                    ТАКСА<br />
+                                    <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
+                                </div>
+                                <div class="col-sm-4 calc-sum">
+                                    СУМА ЗА ВРЪЩАНЕ
+                                    <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
+                                </div>
+                            </div>
+                           <center> <button type="submit" ng-disabled="applying" class="btn btn-danger nz-btn">ВЗЕМИ ЗАЕМ</button></center>
+                        </form>
+                    </div>
+                </div>
+               <!-- </div> -->
+            </div><!-- header -->
+        </div>
+
+        <div class="container" >          
+
+            <div class="col-sm-6 nz-calc-home-mobile" calculator>
+                <form>
+                    <div class="row calc-top">
+                        <div class="col-lg-6 top-data">
+                            <h4>ИСКАНА СУМА</h4>
+                            <span class="calc-top-amount"><span ng-bind="amount"></span><small>лв</small></span>
+                            <div class="nz-slider">
+                                <div class="fill" ng-style="fillAmount()">
+                                    <div class="handle" for="amount" hm-drag="drag($event,'amount')" hm-dragstart="dragstart($event,'amount')" hm-dragend="dragend($event,'amount')"></div>
+                                </div>
+                            </div>
+                            <div class="range">
+                                <div class="more" hm-tap="add.amount(10)"><!-- <img src="images/up.png" /> --></div>
+                                <div hm-tap="add.amount(-10)"><!-- <img src="images/down.png" /> --></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 top-data">
+                            <h4>СРОК</h4>
+                            <span class="calc-top-period"><span ng-bind="days"></span><small>дни</small></span>
+                            <div class="nz-slider orange">
+                                <div class="fill" ng-style="fillDays()">
+                                    <div class="handle" for="days" hm-drag="drag($event,'days')" hm-dragstart="dragstart($event,'days')" hm-dragend="dragend($event,'days')"></div>
+                                </div>
+                            </div>
+                            <div class="range">
+                                <div class="more" hm-tap="add.days(2)"><!-- <img src="images/up.png" /> --></div>
+                                <div hm-tap="add.days(-2)"><!-- <img src="images/down.png" /> --></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row calc-promo">
+                        <div class="col-sm-6">
+                            <label>ПРОМО КОД</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                              <input type="text" class="form-control">
+                              <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">OK</button>
+                              </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                    <div class="row calc-math">
+                        <div class="base col-lg-4">
+                            РАЗМЕР НА ЗАЕМА<br />
+                            <span><span ng-bind="amount"></span><small>лв</small></span>
+                        </div>
+                        <div class="base col-lg-4">
+                            ТАКСА <br />
+                            <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
+                        </div>
+                        <div class="calc-sum col-lg-4">
+                            СУМА ЗА ВРЪЩАНЕ
+                            <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
+                        </div>
+                        
+                    </div>
+                   <center> <a href="#" class="btn btn-danger nz-btn">ВЗЕМИ ЗАЕМ</a></center>
+                </form>
+            </div>
+
+            <!-- <div class="jumbotron">
+                <h1>'Allo, 'Allo!</h1>
+                <p class="lead">Always a pleasure scaffolding your apps.</p>
+                <p><a class="btn btn-lg btn-success" href="#">Splendid! <span class="glyphicon glyphicon-ok"></span></a></p>
+            </div>
+ -->
+            <div class="row marketing">
+                <div class="col-lg-4">
+                    <p><span class="nz-icon"><img src="images/online.png" /></span><strong>Изцяло онлайн</strong> - без скрити такси, без поръчители и без запис на заповед.</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <p><span class="nz-icon"><img src="images/clock.png" /></span><strong>Одобрение до 15 минути</strong> и превод на сумата веднага по личната Ви банкова сметка.</p>
+                </div>
+
+                <div class="col-lg-4">                    
+                    <p style="margin-bottom: 35px;"><span class="nz-icon"><img src="images/approval.png" /></span><strong>98%</strong> от нашите клиенти казват, че отново ще ползват услугите ни и <strong>91%</strong> ни препоръчват на приятелите си.</p>
+
+                </div>
+            </div>
+
+            <div class="row info">
+                <div class="col-lg-6">
+                    <h4>Прогресивно намаляващи такси за лоялни клиенти</h4>
+                    <p> - Всеки седми заем струва <span class="green">САМО 1 лв</span>, независимо от избраните сума и срок.</p>
+                    <p> - Одобрение и превод за <span class="red">1 минута</span> - след първи изплатен заем.</p>
+                    <p> - Възможност за <span class="blue">удължаване на заема</span>.</p>
+                </div>
+
+                <div class="col-lg-2 nz-data">                    
+                    <h5>ПЪРВИ ЗАЕМ</h5>
+                    <ul>
+                        <li>сума/срок<span>20 дни</span></li>
+                        <li><strong>100</strong> лв<span>120.00</span></li>
+                        <li><strong>200</strong> лв<span>236.00</span></li>
+                        <li><strong>300</strong> лв<span>352.00</span></li>
+                        <li><strong>399</strong> лв<span>466.84</span></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 nz-data">                    
+                    <h5>ВТОРИ-ШЕСТИ ЗАЕМ</h5>
+                    <ul>
+                        <li>сума/срок<span>20 дни</span></li>
+                        <li><strong>100</strong> лв<span>115.00</span></li>
+                        <li><strong>200</strong> лв<span>230.00</span></li>
+                        <li><strong>300</strong> лв<span>345.00</span></li>
+                        <li><strong>399</strong> лв<span>458.85</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-2 nz-data">                    
+                    <h5>СЕДМИ ЗАЕМ</h5>
+                    <ul>
+                        <li>сума/срок<span>20 дни</span></li>
+                        <li><strong>100</strong> лв<span><strong>101.00</strong></span></li>
+                        <li><strong>200</strong> лв<span><strong>201.00</strong></span></li>
+                        <li><strong>300</strong> лв<span><strong>301.00</strong></span></li>
+                        <li><strong>399</strong> лв<span><strong>400.00</strong></span></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="row bottom">
+                <div class="col-lg-4 bottom-contact">
+                    <h5>За контакти</h5>
+                    <span>02/ 489 5555</span>
+                    <a href="#">contacts@nazaem.bg</a>
+                    <br /><br />
+                    <div class="fb-like" data-href="https://www.facebook.com/nazaem.bg" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+
+                <div class="col-lg-4">                    
+                    <h5>Често задавани въпроси</h5>
+                    <p> Отговори на всички ваши въпроси относно пари на заем и бързи кредити онлайн. <a href="#">прочети още &#187;</a></p>
+
+                </div>
+
+                <div class="col-lg-4">                    
+                    <h5>Спечели пари</h5>
+                    <p> Печелете пари, като помагате на свои приятели  и ги информирате за нашите бързи кредити. <a href="#">прочети още &#187;</a></p>
+
+                </div>
+            </div> 
+
+            <div class="footer clearfix">
+                <center>                                  
+                    <img src="images/noi-xcredit.png" />
+                                  
+                    <img src="images/bnb-xcredit.png" />  
+
+                    <img src="images/kzld-xcredit.png" />
+                </center>
+                <center><p><a href="#">Бърз кредит</a> • <a href="#">Бързи заеми</a> • <a href="#">Бързи кредити</a> • <a href="#">Заеми</a> • <a href="#">Кредити онлайн</a> <br /> <a href="#">Пари назаем</a> • <a href="#">Кредит лична карта</a> • <a href="#">Кредити без Доказване на Доходи</a> • <a href="#">Потребителски Кредит</a></p></center>
+                <center><p class="text-muted credit">&copy; xCredit.bg е услуга на Pan Balkan Finance AD • Най-лесните и бързи кредити онлайн • Всички права са запазени • Удостоверение № BGR00263<br />
+                    <a href="#">contacts@nazaem.bg</a> • <a href="#">Общи условия</a> • <a href="#">Общи условия за ползване на сайта</a></p></center>
+            </div>
+
+        </div>
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/hammerjs/hammer.js"></script>
+        <script src="bower_components/angular-hammer/angular-hammer.js"></script>
+        <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+        <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
