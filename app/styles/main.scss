@@ -304,7 +304,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 
         .nav-pills {
             background-color: #514f51;
-            margin-left: 0;margin: 0 auto;
+            margin-left: 0; margin: 0 auto;
             //padding: 8px 30px 17px;
             border-bottom: 3px solid #444;
             li{
@@ -1076,6 +1076,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
         border-top: 1px solid #eee;
         padding: 30px;
         padding-top: 20px;
+        margin-bottom: 200px;
         button{
             font-size: 13px;
             color: #EA4B24;
@@ -1089,6 +1090,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             padding-bottom: 7px;
         }
     }
+
 }
 
 .nz-sidebar-contact{
@@ -1107,7 +1109,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
     padding-left: 30px;
     position: absolute;
     bottom: 30px;
-    right: -96px;
+    right: -69px;
 }
 
 .about-us .nz-sidebar{
@@ -1200,7 +1202,7 @@ body.xcredit{
 
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width:768px){
+@media only screen and (min-width:768px){
     .container {
         max-width: 1170px;
         &.login{
@@ -1227,9 +1229,37 @@ body.xcredit{
     }
 }
 
-@media screen and (max-width:800px){
+@media only screen and (max-width:800px){
+    .nz-calc-home{
+        width: 100%;
+    }
+
+    .nz-icon{
+        min-width: 85px;
+        float: left;
+        img{
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+}
+
+@media only screen and (max-width:640px){
     .nz-calc-home{display: none;}
     .nz-calc-home-mobile{display: block;}
+
+    .calc-math{
+            .base, .calc-sum{
+               float: left;
+                width: 30%;
+            }
+            .calc-sum{
+               
+            }
+        }     
 }
 
 @media screen and (max-width:480px){
@@ -1388,6 +1418,7 @@ body.xcredit{
                 float: left;
                 width: 50%;
                 padding-left: 15px;
+                width: 30%;
             }
             .calc-sum{
                 padding-left: 15px;
@@ -1408,5 +1439,9 @@ body.xcredit{
 
     .footer {
         padding-bottom: 0;
+    }
+
+    .nz-sidebar-contact{
+        display: none;
     }
 }
