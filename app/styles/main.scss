@@ -364,7 +364,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             color: #ededed;
             &.subtext{
                 font-size: 14px;
-                padding-top: 37px;
+                padding-top: 86px;
                 margin-bottom: 40px;
                 opacity: 0.8;
             }
@@ -485,6 +485,7 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
                 font-size: 32px;
                 display: block;
                 font-weight: bold;
+                display: inline;
                 small{font-weight: normal; font-size: 22px; margin-left: 3px;}
             }
             .calc-sum {
@@ -1195,6 +1196,10 @@ body.xcredit{
         padding: 0;
     }
 
+    .fb-like{
+        margin-bottom: 15px;
+    }
+
     .container {
         max-width: 320px;
         overflow: hidden;
@@ -1347,6 +1352,7 @@ body.xcredit{
             }
         }      
     }
+
 
     .footer center img {
         padding: 15px 1px;
