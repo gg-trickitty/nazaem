@@ -150,6 +150,11 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
     margin-top: -3px;
     margin-bottom: 15px;
     padding-top: 2px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     .fill{
         position: relative;
         height: 1px;
@@ -164,6 +169,16 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             height: 15px;
             cursor: hand;
             cursor: pointer;
+            -moz-user-select: -moz-none;
+           -khtml-user-select: none;
+           -webkit-user-select: none;
+
+           /*
+             Introduced in IE 10.
+             See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+           */
+           -ms-user-select: none;
+           user-select: none;
         }
     }
     &.orange{
@@ -378,13 +393,20 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
 
         .calc-top{
             font-family: Roboto;
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
             .top-data{
                 position: relative;
             }
             span{
-                color: #2fb35b;
                 font-size: 66px;
                 font-weight: bold;
+                &.calc-top-amount{
+                    color: #2fb35b;
+                }
 
                 small{
                     font-size: 20px;
