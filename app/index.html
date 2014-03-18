@@ -95,15 +95,15 @@
                             </div>
                             <div class="row calc-math">
                                 <div class="base col-sm-4">
-                                    РАЗМЕР НА ЗАЕМА<br />
+                                    <h5>РАЗМЕР НА ЗАЕМА</h5>
                                     <span><span ng-bind="amount"></span><small>лв</small></span>
                                 </div>
                                 <div class="base col-sm-4">
-                                    ТАКСА<br />
+                                    <h5>ТАКСА</h5>
                                     <span><span ng-bind="interest | number:2"></span><small>лв</small></span>
                                 </div>
                                 <div class="col-sm-4 calc-sum">
-                                    СУМА ЗА ВРЪЩАНЕ
+                                    <h5>СУМА ЗА ВРЪЩАНЕ</h5>
                                     <span><span ng-bind="interest+amount | number:2"></span><small>лв</small></span>
                                 </div>
                             </div>
@@ -199,7 +199,7 @@
             </div>
 
             <div class="row info">
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <h4>Прогресивно намаляващи такси за лоялни клиенти</h4>
                     <p> - Всеки седми заем струва <span class="green">САМО 1 лв</span>, независимо от избраните сума и срок.</p>
                     <p> - Одобрение и превод за <span class="red">1 минута</span> - след първи изплатен заем.</p>

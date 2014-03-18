@@ -514,6 +514,14 @@ p{font-size: 14px; color: #1f1f1f; margin-bottom: 35px;}
             color: #888;
             border-top: 1px solid #e7e7e7;
             font-family: Roboto;
+            h5{
+                color: #888;
+                padding-bottom: 0;
+                min-height: 0;
+                margin-bottom: 0;
+                margin-top:0;
+                line-height: 1.4em;
+            }
             span{
                 color: #2fb35b;
                 font-size: 32px;
@@ -1305,6 +1313,10 @@ body.xcredit{
         .calc-top  .range{
             right: 14px;
         }
+    }
+
+    .nz-calc-home .calc-math h5{
+        min-height: 38px;
     }
 }
 
