@@ -17,9 +17,16 @@ angular.module('nazaem')
 		$scope.interest = localStorage.interest;
 		$scope.days = localStorage.days;
 		$scope.total = Number(localStorage.amount)+Number(localStorage.interest)+4;
-		console.log($scope.total);
+
 		$scope.returnDate = new Date();
 		$scope.returnDate.setTime($scope.returnDate.getTime()+$scope.days*86400000);
+	}
+
+	$scope.clear = function(){
+		delete localStorage.amount;
+		delete localStorage.interest;
+		delete localStorage.days;
+		$scope.amount=null;
 	}
 }])
 
